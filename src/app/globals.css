@@ -1,10 +1,44 @@
 @import "tailwindcss";
 
+/* ============================= */
+/* ROOT VARIABLES */
+/* ============================= */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Brand Colors */
+  --primary: #0A2647; /* Deep Navy */
+  --accent: #C5A059;  /* Muted Gold */
+  --bg: #FAFAFA;      /* Soft Background */
+
+  /* UI Colors */
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --muted: #6b7280;
+
+  /* Radius */
+  --radius: 16px;
 }
 
+/* ============================= */
+/* DARK MODE */
+/* ============================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+
+    --bg: #0f172a;
+    --card: #111827;
+    --border: #1f2937;
+    --muted: #9ca3af;
+  }
+}
+
+/* ============================= */
+/* THEME CONFIG */
+/* ============================= */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,15 +46,111 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================= */
+/* BASE STYLES */
+/* ============================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[var(--bg)] text-[var(--foreground)] antialiased;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl font-semibold tracking-tight text-[var(--primary)];
+  }
+
+  h2 {
+    @apply text-2xl md:text-4xl font-semibold text-[var(--primary)];
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-medium text-[var(--primary)];
+  }
+
+  p {
+    @apply text-gray-600 leading-relaxed;
+  }
+
+  ::selection {
+    background: rgba(197, 160, 89, 0.2);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================= */
+/* COMPONENT UTILITIES */
+/* ============================= */
+@layer components {
+
+  /* Glass Effect (Navbar etc) */
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-[var(--border)];
+  }
+
+  /* Premium Card */
+  .card {
+    @apply bg-[var(--card)] rounded-2xl shadow-sm border border-[var(--border)] transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-xl hover:-translate-y-1;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-[var(--primary)] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:opacity-90;
+  }
+
+  .btn-accent {
+    @apply bg-[var(--accent)] text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:opacity-90;
+  }
+
+  .btn-outline {
+    @apply border border-[var(--border)] px-6 py-3 rounded-full hover:bg-gray-100 transition;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 md:px-8;
+  }
+}
+
+/* ============================= */
+/* UTILITIES */
+/* ============================= */
+@layer utilities {
+
+  /* Hide Scrollbar */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Smooth image zoom */
+  .img-hover {
+    @apply transition-transform duration-500 ease-in-out hover:scale-105;
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Shadow Upgrade */
+  .shadow-soft {
+    box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.1);
+  }
 }
