@@ -15,7 +15,8 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20 md:py-28 bg-[var(--bg)]">
+    // Updated bg to light slate to maintain consistency
+    <section className="py-20 md:py-28 bg-slate-50">
       <Container>
 
         {/* Heading */}
@@ -43,7 +44,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -8 }}
-              className="group p-6 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:border-[var(--accent)]/40 transition-all cursor-pointer"
+              className="group p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-lg hover:border-[var(--accent)]/40 transition-all cursor-pointer"
             >
               
               {/* Icon Placeholder */}
@@ -52,7 +53,7 @@ export default function Services() {
               </div>
 
               {/* Tag */}
-              <span className="inline-block mb-2 text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">
+              <span className="inline-block mb-2 text-xs px-2 py-1 bg-slate-100 text-gray-600 rounded-full">
                 {service.tag}
               </span>
 

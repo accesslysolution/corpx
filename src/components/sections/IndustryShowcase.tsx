@@ -48,7 +48,8 @@ const fadeUp = {
 
 export default function IndustryStyleCleaningSection() {
   return (
-    <section className="py-20 md:py-28 bg-[var(--bg)]">
+    // Updated bg to light slate for a clean, professional look
+    <section className="py-20 md:py-28 bg-slate-50">
       <Container>
 
         {/* Heading */}
@@ -78,7 +79,8 @@ export default function IndustryStyleCleaningSection() {
               whileInView="show"
               viewport={{ once: false }}
               transition={{ delay: i * 0.1 }}
-              className="relative group rounded-2xl overflow-hidden cursor-pointer"
+              // Added border and subtle shadow for better contrast against light bg
+              className="relative group rounded-2xl overflow-hidden cursor-pointer border border-slate-200 shadow-sm hover:shadow-xl transition-shadow duration-300"
             >
 
               {/* IMAGE */}
@@ -112,7 +114,6 @@ export default function IndustryStyleCleaningSection() {
                 <button className="mt-4 px-5 py-2 bg-[var(--accent)] text-white text-sm rounded-full hover:opacity-90 transition">
                   Know More →
                 </button>
-
               </div>
 
             </motion.div>

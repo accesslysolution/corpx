@@ -36,40 +36,40 @@ function Counter({ value }: { value: number }) {
 
 export default function StatsSection() {
   return (
-    <section className="w-full py-16 md:py-24 bg-[var(--bg)]">
+    <section className="w-full py-10 md:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
 
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-14"
+          transition={{ duration: 0.4 }}
+          className="text-center mb-8 md:mb-14"
         >
-          <h2 className="text-3xl md:text-5xl font-semibold text-[var(--primary)]">
+          <h2 className="text-2xl md:text-5xl font-semibold text-[var(--primary)]">
             Trusted by Thousands
           </h2>
-          <p className="mt-3 text-gray-500 text-sm md:text-base">
-            We deliver consistent quality and premium cleaning experiences
+          <p className="mt-2 md:mt-3 text-gray-500 text-xs md:text-base max-w-xl mx-auto">
+            We deliver consistent quality and premium cleaning experiences for homes and businesses.
           </p>
         </motion.div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
 
           {stats.map((stat, index) => (
             <motion.div
               key={stat.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15 }}
-              className="bg-white border border-gray-100 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-all"
+              transition={{ delay: index * 0.1 }}
+              className="bg-white border border-gray-100 rounded-xl md:rounded-2xl p-4 md:p-6 text-center shadow-sm hover:shadow-md transition-all"
             >
-              <h3 className="text-3xl md:text-4xl font-bold text-[var(--primary)]">
+              <h3 className="text-xl md:text-4xl font-bold text-[var(--primary)]">
                 <Counter value={stat.value} />
               </h3>
 
-              <p className="mt-2 text-gray-500 text-sm">
+              <p className="mt-1 md:mt-2 text-gray-500 text-[11px] md:text-sm">
                 {stat.label}
               </p>
             </motion.div>
