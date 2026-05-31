@@ -8,7 +8,7 @@ import { ServiceCard } from "./ServiceCard";
 
 const services = [
   { title: "Deep Cleaning", badge: "Popular", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952" },
-  { title: "Sofa Cleaning", badge: "45 mins", image: "https://images.unsplash.com/photo-1582582494700-0b8b8b7f3b2f" },
+  { title: "Sofa Cleaning", badge: "45 mins", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800&h=800" },
   { title: "Bathroom Cleaning", badge: "30 mins", image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea" },
   { title: "Kitchen Cleaning", badge: "Trending", image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f" }
 ];
