@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Home, Briefcase, Mail, Calendar, Sparkles } from "lucide-react";
+import { Home, Briefcase, Mail, Calendar } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -19,9 +20,19 @@ export default function Navbar() {
       {/* DESKTOP NAVBAR */}
       <header className="hidden md:flex fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center w-full">
-          <div className="flex items-center gap-2 font-bold text-xl tracking-tight">
-            <Sparkles className="text-[var(--accent)]" /> CorpX
-          </div>
+
+          {/* ✅ LOGO */}
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/logo.avif" 
+              alt="CorpX Logo" 
+              width={120} 
+              height={40} 
+              className="object-contain"
+              priority
+            />
+          </Link>
+
           <nav className="flex gap-8 font-medium text-sm">
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href} className="hover:text-[var(--accent)] transition-colors">
@@ -29,18 +40,27 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
+
           <button className="bg-[var(--primary)] text-white px-5 py-2 rounded-full text-sm hover:opacity-90 transition-opacity">
             Get Quote
           </button>
         </div>
       </header>
 
-      {/* ✅ MOBILE TOP HEADER (NEW) */}
+      {/* MOBILE TOP HEADER */}
       <header className="md:hidden fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-5 py-3 flex justify-between items-center">
-        <div className="flex items-center gap-2 font-bold text-lg">
-          <Sparkles className="text-[var(--accent)]" size={18} />
-          CorpX
-        </div>
+        
+        {/* ✅ MOBILE LOGO */}
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/logo.avif" 
+            alt="CorpX Logo" 
+            width={100} 
+            height={32} 
+            className="object-contain"
+            priority
+          />
+        </Link>
 
         <button className="bg-[var(--primary)] text-white px-4 py-1.5 rounded-full text-xs shadow-md active:scale-95 transition">
           Get Quote
