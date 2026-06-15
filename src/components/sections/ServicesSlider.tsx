@@ -105,46 +105,51 @@ export default function ServicesSlider() {
             </p>
           </div>
 
-          {/* Desktop Controls */}
           <div className="hidden md:flex gap-2">
-            <button
-              onClick={() => scroll("left")}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition"
-            >
+            <button onClick={() => scroll("left")} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition">
               <ChevronLeft size={20} />
             </button>
-            <button
-              onClick={() => scroll("right")}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition"
-            >
+            <button onClick={() => scroll("right")} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition">
               <ChevronRight size={20} />
             </button>
           </div>
         </div>
 
-        {/* Slider */}
-        <div
-          ref={scrollRef}
-          className="flex gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
-        >
-          {services.map((service) => (
-            <motion.div
-              key={service.id}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="min-w-[300px] md:min-w-[380px] h-[200px] md:h-[240px] relative rounded-2xl overflow-hidden snap-start cursor-pointer shadow-lg"
-            >
-              <Image
-                src={service.img}
-                alt={service.title}
-                fill
-                className="object-cover"
-              />
+        {/* ✅ VIDEO + TEXT SECTION */}
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
 
-              {/* Overlay */}
+          {/* Videos (Smaller Size) */}
+          <div className="flex gap-4">
+            <div className="w-[140px] md:w-[180px] aspect-[9/16] rounded-xl overflow-hidden shadow-md">
+              <video src="/gallery/Video/1.webm" className="w-full h-full object-cover" autoPlay muted loop playsInline />
+            </div>
+            <div className="w-[140px] md:w-[180px] aspect-[9/16] rounded-xl overflow-hidden shadow-md">
+              <video src="/gallery/Video/2.webm" className="w-full h-full object-cover" autoPlay muted loop playsInline />
+            </div>
+          </div>
+
+          {/* Text */}
+          <div className="max-w-xl">
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-2">
+              See Our Work in Action
+            </h3>
+            <p className="text-gray-600 text-sm md:text-base">
+              Watch how our professional team transforms spaces with deep cleaning,
+              advanced equipment, and industry-grade techniques. From homes to
+              commercial properties, we deliver spotless results every time.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Slider */}
+        <div ref={scrollRef} className="flex gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+          {services.map((service) => (
+            <motion.div key={service.id} whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 200, damping: 20 }} className="min-w-[300px] md:min-w-[380px] h-[200px] md:h-[240px] relative rounded-2xl overflow-hidden snap-start cursor-pointer shadow-lg">
+              <Image src={service.img} alt={service.title} fill className="object-cover" />
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-              {/* Text */}
               <div className="absolute bottom-4 left-4 text-white text-base md:text-lg font-medium">
                 {service.title}
               </div>
@@ -154,19 +159,14 @@ export default function ServicesSlider() {
 
         {/* Mobile Controls */}
         <div className="md:hidden flex justify-center gap-4 mt-6">
-          <button
-            onClick={() => scroll("left")}
-            className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center"
-          >
+          <button onClick={() => scroll("left")} className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center">
             <ChevronLeft size={20} />
           </button>
-          <button
-            onClick={() => scroll("right")}
-            className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center"
-          >
+          <button onClick={() => scroll("right")} className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center">
             <ChevronRight size={20} />
           </button>
         </div>
+
       </div>
     </section>
   );
