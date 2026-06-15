@@ -19,18 +19,20 @@ export default function Navbar() {
     <>
       {/* DESKTOP NAVBAR */}
       <header className="hidden md:flex fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center w-full">
+        <div className="max-w-7xl mx-auto px-8 py-2 flex justify-between items-center w-full">
 
-          {/* ✅ LOGO */}
+          {/* ✅ LOGO (NOW SAME AS MOBILE - CROPPED) */}
           <Link href="/" className="flex items-center">
-            <Image 
-              src="/logo.avif" 
-              alt="CorpX Logo" 
-              width={120} 
-              height={40} 
-              className="object-contain"
-              priority
-            />
+            <div className="h-8 overflow-hidden flex items-center">
+              <Image 
+                src="/logo.avif" 
+                alt="CorpX Logo" 
+                width={100} 
+                height={40}
+                className="object-cover translate-y-[-6px]"
+                priority
+              />
+            </div>
           </Link>
 
           <nav className="flex gap-8 font-medium text-sm">
@@ -50,7 +52,7 @@ export default function Navbar() {
       {/* MOBILE TOP HEADER */}
       <header className="md:hidden fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-5 py-3 flex justify-between items-center">
         
-        {/* ✅ MOBILE LOGO (RECTANGULAR CROPPED) */}
+        {/* ✅ MOBILE LOGO (UNCHANGED) */}
         <Link href="/" className="flex items-center">
           <div className="h-8 overflow-hidden flex items-center">
             <Image 

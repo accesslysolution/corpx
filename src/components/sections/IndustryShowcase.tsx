@@ -6,34 +6,54 @@ import { Container } from "../ui/Container";
 
 const services = [
   {
-    title: "Home Deep Cleaning",
+    title: "Deep Cleaning Solutions",
     img: "/gallery/1.avif",
-    stats: ["5000+ Homes cleaned", "4.9★ Customer rating", "Same-day service"],
+    stats: ["5000+ Spaces cleaned", "4.9★ Rated Service", "Same-day available"],
   },
   {
-    title: "Sofa & Upholstery",
+    title: "Residential Cleaning",
     img: "/gallery/2.avif",
-    stats: ["Fabric-safe cleaning", "99% stain removal", "Quick dry tech"],
+    stats: ["Apartments & Villas", "Trusted professionals", "Flexible booking"],
   },
   {
-    title: "Bathroom Cleaning",
+    title: "Industrial Cleaning",
     img: "/gallery/3.avif",
-    stats: ["Germ-free surfaces", "Hard stain removal", "Odor elimination"],
+    stats: ["Heavy-duty cleaning", "Factory & warehouse", "Safety compliant"],
   },
   {
-    title: "Kitchen Deep Cleaning",
+    title: "Corporate Office Cleaning",
     img: "/gallery/4.avif",
-    stats: ["Grease removal", "Cabinet detailing", "Hygiene certified"],
+    stats: ["Corporate clients", "Daily/weekly plans", "After-hours service"],
   },
   {
-    title: "Office Cleaning",
+    title: "Facade & Glass Cleaning",
     img: "/gallery/5.avif",
-    stats: ["Corporate clients", "Flexible timing", "Daily maintenance"],
+    stats: ["High-rise expertise", "Streak-free finish", "Safety equipment"],
   },
   {
-    title: "Full Home Sanitization",
+    title: "Healthcare Facility Cleaning",
     img: "/gallery/6.avif",
-    stats: ["Virus protection", "Safe chemicals", "Family-safe"],
+    stats: ["Hospital-grade hygiene", "Disinfection protocols", "Certified team"],
+  },
+  {
+    title: "Before Possession Cleaning",
+    img: "/gallery/1.avif",
+    stats: ["New home ready", "Dust & debris removal", "Move-in perfect"],
+  },
+  {
+    title: "Carpet Cleaning",
+    img: "/gallery/2.avif",
+    stats: ["Deep carpet wash", "Stain & odor removal", "Quick drying process"],
+  },
+  {
+    title: "Upholstery Cleaning",
+    img: "/gallery/3.avif",
+    stats: ["Sofa & fabric care", "Dust & allergen removal", "Fabric-safe cleaning"],
+  },
+  {
+    title: "Hotel & Kitchen Cleaning",
+    img: "/gallery/4.avif",
+    stats: ["Grease removal", "Food-safe cleaning", "Hygiene compliance"],
   },
 ];
 
@@ -48,7 +68,6 @@ const fadeUp = {
 
 export default function IndustryStyleCleaningSection() {
   return (
-    // Updated bg to light slate for a clean, professional look
     <section className="py-20 md:py-28 bg-slate-50">
       <Container>
 
@@ -70,7 +89,6 @@ export default function IndustryStyleCleaningSection() {
 
         {/* Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-
           {services.map((service, i) => (
             <motion.div
               key={i}
@@ -79,7 +97,6 @@ export default function IndustryStyleCleaningSection() {
               whileInView="show"
               viewport={{ once: false }}
               transition={{ delay: i * 0.1 }}
-              // Added border and subtle shadow for better contrast against light bg
               className="relative group rounded-2xl overflow-hidden cursor-pointer border border-slate-200 shadow-sm hover:shadow-xl transition-shadow duration-300"
             >
 
@@ -93,32 +110,33 @@ export default function IndustryStyleCleaningSection() {
                 />
               </div>
 
-              {/* NORMAL TEXT */}
+              {/* TITLE */}
               <div className="absolute bottom-4 left-4 z-10 text-white">
-                <p className="text-lg font-semibold">{service.title}</p>
+                <p className="text-lg font-semibold drop-shadow-md">
+                  {service.title}
+                </p>
               </div>
 
-              {/* DARK OVERLAY */}
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/70 transition-all duration-500" />
+              {/* OVERLAY (IMPROVED FOR CONTRAST) */}
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/75 transition-all duration-500" />
 
               {/* HOVER CONTENT */}
               <div className="absolute inset-0 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-all duration-500 px-6 text-center">
                 
                 {service.stats.map((stat, idx) => (
-                  <p key={idx} className="text-sm md:text-base mb-2">
+                  <p key={idx} className="text-sm md:text-base mb-2 text-gray-200">
                     <span className="text-[var(--accent)] font-semibold">✦ </span>
                     {stat}
                   </p>
                 ))}
 
-                <button className="mt-4 px-5 py-2 bg-[var(--accent)] text-white text-sm rounded-full hover:opacity-90 transition">
+                <button className="mt-4 px-5 py-2 bg-[var(--accent)] text-white text-sm rounded-full hover:brightness-110 transition">
                   Know More →
                 </button>
               </div>
 
             </motion.div>
           ))}
-
         </div>
       </Container>
     </section>

@@ -1,12 +1,38 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
+/* ✅ VARIANTS */
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function ContactPage() {
   return (
-    <section className="relative bg-[#070A12] text-white overflow-hidden py-28">
+    <motion.section
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+      className="relative bg-[#070A12] text-white overflow-hidden py-28"
+    >
 
       {/* background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.18),transparent_60%)]" />
@@ -14,7 +40,7 @@ export default function ContactPage() {
       <Container>
 
         {/* HEADER */}
-        <div className="text-center mb-16">
+        <motion.div variants={fadeUp} className="text-center mb-16">
           <div className="flex justify-center items-center gap-2 mb-3">
             <Sparkles className="text-[var(--accent)]" size={18} />
             <span className="text-gray-200 text-sm">
@@ -31,16 +57,14 @@ export default function ContactPage() {
             Whether you need cleaning services, enterprise solutions, or partnerships —  
             our team is ready to help you scale efficiently.
           </p>
-        </div>
+        </motion.div>
 
         {/* MAIN GRID */}
         <div className="grid md:grid-cols-2 gap-12">
 
           {/* LEFT - FORM */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={fadeUp}
             className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-xl"
           >
             <h2 className="text-xl font-semibold text-white mb-6">
@@ -77,33 +101,33 @@ export default function ContactPage() {
           </motion.div>
 
           {/* RIGHT - INFO */}
-          <div className="space-y-6">
+          <motion.div variants={fadeUp} className="space-y-6">
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <motion.div variants={fadeUp} className="bg-white/5 border border-white/10 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-2">
                 <Mail className="text-[var(--accent)]" />
                 <h3 className="font-medium text-white">Email Support</h3>
               </div>
               <p className="text-gray-300">support@corpx.com</p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <motion.div variants={fadeUp} className="bg-white/5 border border-white/10 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-2">
                 <Phone className="text-[var(--accent)]" />
                 <h3 className="font-medium text-white">Phone Support</h3>
               </div>
               <p className="text-gray-300">+91 98765 43210</p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <motion.div variants={fadeUp} className="bg-white/5 border border-white/10 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-2">
                 <MapPin className="text-[var(--accent)]" />
                 <h3 className="font-medium text-white">Office</h3>
               </div>
               <p className="text-gray-300">Pune, Maharashtra, India</p>
-            </div>
+            </motion.div>
 
-            <div className="bg-gradient-to-r from-[var(--accent)]/20 to-transparent border border-white/10 rounded-2xl p-6">
+            <motion.div variants={fadeUp} className="bg-linear-to-r from-[var(--accent)]/20 to-transparent border border-white/10 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-2">
                 <Clock className="text-[var(--accent)]" />
                 <h3 className="font-medium text-white">Fast Response</h3>
@@ -111,12 +135,12 @@ export default function ContactPage() {
               <p className="text-gray-300">
                 Average response time: under 2 hours during business days.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* FAQ */}
-        <div className="mt-20 grid md:grid-cols-3 gap-6">
+        <motion.div variants={fadeUp} className="mt-20 grid md:grid-cols-3 gap-6">
           {[
             {
               q: "Do you offer residential cleaning?",
@@ -131,17 +155,18 @@ export default function ContactPage() {
               a: "Yes, we tailor services for enterprise clients.",
             },
           ].map((item, i) => (
-            <div
+            <motion.div
               key={i}
+              variants={fadeUp}
               className="bg-white/5 border border-white/10 rounded-xl p-5"
             >
               <h4 className="font-medium text-white mb-2">{item.q}</h4>
               <p className="text-gray-300 text-sm">{item.a}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </Container>
-    </section>
+    </motion.section>
   );
 }
