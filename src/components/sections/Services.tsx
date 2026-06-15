@@ -3,14 +3,17 @@ import { motion } from "framer-motion";
 import { Container } from "../ui/Container";
 
 const services = [
-  { title: "Home Deep Cleaning", tag: "Popular" },
-  { title: "Sofa Cleaning", tag: "Essential" },
-  { title: "Bathroom Cleaning", tag: "Hygiene" },
-  { title: "Kitchen Deep Cleaning", tag: "Premium" },
-  { title: "Carpet & Mattress Cleaning", tag: "Advanced" },
-  { title: "Office Cleaning", tag: "Commercial" },
-  { title: "Full Home Sanitization", tag: "Safe Living" },
-  { title: "Move-in / Move-out Cleaning", tag: "Convenience" },
+  { title: "Deep Cleaning Solutions", tag: "Core Service" },
+  { title: "Residential Cleaning Solutions", tag: "Home Care" },
+  { title: "Industrial Cleaning Solutions", tag: "Heavy Duty" },
+  { title: "Corporate Office Cleaning", tag: "Commercial" },
+  { title: "Facade & Glass Cleaning", tag: "Specialized" },
+  { title: "Healthcare Facility Cleaning", tag: "Critical Hygiene" },
+  { title: "Building & Premises Maintenance", tag: "Facility Care" },
+  { title: "Hotel & Commercial Kitchen Cleaning", tag: "Hospitality" },
+  { title: "Cafe & Restaurant Cleaning", tag: "Food Grade" },
+  { title: "Before Possession Cleaning", tag: "Real Estate" },
+  { title: "Carpet & Upholstery Cleaning", tag: "Advanced Care" },
 ];
 
 export default function Services() {
