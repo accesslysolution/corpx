@@ -7,10 +7,26 @@ import { Container } from "../ui/Container";
 import { ServiceCard } from "./ServiceCard";
 
 const services = [
-  { title: "Deep Cleaning", badge: "Popular", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952" },
-  { title: "Sofa Cleaning", badge: "45 mins", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800&h=800" },
-  { title: "Bathroom Cleaning", badge: "30 mins", image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea" },
-  { title: "Kitchen Cleaning", badge: "Trending", image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f" }
+  {
+    title: "Deep Cleaning Solutions",
+    badge: "4.9★ Rated",
+    image: "/gallery/Deep_Cleaning.avif",
+  },
+  {
+    title: "Residential Cleaning",
+    badge: "Home Care",
+    image: "/gallery/Residential_Cleaning.avif",
+  },
+  {
+    title: "Corporate Office Cleaning",
+    badge: "Commercial",
+    image: "/gallery/Corporate_Office.avif",
+  },
+  {
+    title: "Sofa & Upholstery Cleaning",
+    badge: "Quick Dry",
+    image: "/gallery/Upholstery.avif",
+  },
 ];
 
 const containerVariant: Variants = {

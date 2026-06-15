@@ -7,54 +7,64 @@ import { Container } from "../ui/Container";
 const services = [
   {
     title: "Deep Cleaning Solutions",
-    img: "/gallery/1.avif",
+    img: "/gallery/Deep_Cleaning.avif",
     stats: ["5000+ Spaces cleaned", "4.9★ Rated Service", "Same-day available"],
   },
   {
     title: "Residential Cleaning",
-    img: "/gallery/2.avif",
+    img: "/gallery/Residential_Cleaning.avif",
     stats: ["Apartments & Villas", "Trusted professionals", "Flexible booking"],
   },
   {
     title: "Industrial Cleaning",
-    img: "/gallery/3.avif",
+    img: "/gallery/Industrial_Cleaning.avif",
     stats: ["Heavy-duty cleaning", "Factory & warehouse", "Safety compliant"],
   },
   {
     title: "Corporate Office Cleaning",
-    img: "/gallery/4.avif",
+    img: "/gallery/Corporate_Office.avif",
     stats: ["Corporate clients", "Daily/weekly plans", "After-hours service"],
   },
   {
     title: "Facade & Glass Cleaning",
-    img: "/gallery/5.avif",
+    img: "/gallery/Facade.avif",
     stats: ["High-rise expertise", "Streak-free finish", "Safety equipment"],
   },
   {
     title: "Healthcare Facility Cleaning",
-    img: "/gallery/6.avif",
+    img: "/gallery/Healthcare.avif",
     stats: ["Hospital-grade hygiene", "Disinfection protocols", "Certified team"],
   },
   {
     title: "Before Possession Cleaning",
-    img: "/gallery/1.avif",
+    img: "/gallery/Before_Possession.avif",
     stats: ["New home ready", "Dust & debris removal", "Move-in perfect"],
   },
   {
     title: "Carpet Cleaning",
-    img: "/gallery/2.avif",
+    img: "/gallery/Carpet.avif",
     stats: ["Deep carpet wash", "Stain & odor removal", "Quick drying process"],
   },
   {
     title: "Upholstery Cleaning",
-    img: "/gallery/3.avif",
+    img: "/gallery/Upholstery.avif",
     stats: ["Sofa & fabric care", "Dust & allergen removal", "Fabric-safe cleaning"],
   },
   {
     title: "Hotel & Kitchen Cleaning",
-    img: "/gallery/4.avif",
+    img: "/gallery/Hotel.avif",
     stats: ["Grease removal", "Food-safe cleaning", "Hygiene compliance"],
   },
+  {
+    title: "Cafe & Restaurant Cleaning",
+    img: "/gallery/Cafe.avif",
+    stats: ["Grease & oil removal", "Food-grade sanitization", "FSSAI hygiene compliance"],
+  },
+  {
+    title: "Building & Premises Maintenance",
+    img: "/gallery/Building_Premises.avif",
+    stats: ["Common area upkeep", "Daily facility maintenance", "Electrical & plumbing support"],
+  }
 ];
 
 const fadeUp = {
