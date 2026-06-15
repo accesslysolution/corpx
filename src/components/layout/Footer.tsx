@@ -1,5 +1,6 @@
 import { Container } from "../ui/Container";
 import { Sparkles } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -12,12 +13,16 @@ export default function Footer() {
 
           {/* BRAND BLOCK */}
           <div className="md:col-span-4">
-            {/* LOGO (same as Navbar) */}
-            <div className="flex items-center gap-2 mb-4">
-              <Sparkles className="text-[var(--accent)]" size={18} />
-              <span className="text-white text-xl font-semibold tracking-tight">
-                Corpx
-              </span>
+            {/* ✅ LOGO (UPDATED) */}
+            <div className="mb-4">
+              <Image 
+                src="/logowhite.avif" 
+                alt="CorpX Logo" 
+                width={140} 
+                height={50} 
+                className="object-contain"
+                priority
+              />
             </div>
 
             <p className="text-gray-400 leading-relaxed max-w-sm">

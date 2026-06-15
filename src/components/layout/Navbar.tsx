@@ -50,16 +50,18 @@ export default function Navbar() {
       {/* MOBILE TOP HEADER */}
       <header className="md:hidden fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-5 py-3 flex justify-between items-center">
         
-        {/* ✅ MOBILE LOGO */}
+        {/* ✅ MOBILE LOGO (RECTANGULAR CROPPED) */}
         <Link href="/" className="flex items-center">
-          <Image 
-            src="/logo.avif" 
-            alt="CorpX Logo" 
-            width={100} 
-            height={32} 
-            className="object-contain"
-            priority
-          />
+          <div className="h-8 overflow-hidden flex items-center">
+            <Image 
+              src="/logo.avif" 
+              alt="CorpX Logo" 
+              width={100} 
+              height={40}
+              className="object-cover translate-y-[-6px]"
+              priority
+            />
+          </div>
         </Link>
 
         <button className="bg-[var(--primary)] text-white px-4 py-1.5 rounded-full text-xs shadow-md active:scale-95 transition">
