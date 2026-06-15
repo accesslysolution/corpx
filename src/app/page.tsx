@@ -5,6 +5,7 @@ import Process from "@/components/sections/Process";
 import StatsSection from "@/components/sections/StatsSection";
 import IndustryStyleCleaningSection from "@/components/sections/IndustryShowcase";
 import Clients from "@/components/sections/Clients";
+import GalleryView from "@/components/sections/GalleryView";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,8 @@ export default function HomePage() {
       <StatsSection />
       <ServicesSlider />
       <Clients />
+      <GalleryView />
+
 
       {/* SERVICES EXPERIENCE */}
       <Services />
