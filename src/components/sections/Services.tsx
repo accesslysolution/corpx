@@ -18,7 +18,6 @@ const services = [
 
 export default function Services() {
   return (
-    // Updated bg to light slate to maintain consistency
     <section className="py-20 md:py-28 bg-slate-50">
       <Container>
 
@@ -39,40 +38,66 @@ export default function Services() {
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {services.map((service, i) => {
+            const whatsappMessage = `Hi, I'm interested in ${service.title}. Can you share more details?`;
+            const whatsappLink = `https://wa.me/917778889997?text=${encodeURIComponent(whatsappMessage)}`;
 
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -8 }}
-              className="group p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-lg hover:border-[var(--accent)]/40 transition-all cursor-pointer"
-            >
-              
-              {/* Icon Placeholder */}
-              <div className="w-10 h-10 mb-4 rounded-lg bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] font-semibold">
-                ✦
-              </div>
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08 }}
+                whileHover={{ y: -8 }}
+                className="group p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-lg hover:border-[var(--accent)]/40 transition-all cursor-pointer"
+              >
+                
+                {/* Icon */}
+                <div className="w-10 h-10 mb-4 rounded-lg bg-[var(--accent)]/10 flex items-center justify-center text-[var(--accent)] font-semibold">
+                  ✦
+                </div>
 
-              {/* Tag */}
-              <span className="inline-block mb-2 text-xs px-2 py-1 bg-slate-100 text-gray-600 rounded-full">
-                {service.tag}
-              </span>
+                {/* Tag */}
+                <span className="inline-block mb-2 text-xs px-2 py-1 bg-slate-100 text-gray-600 rounded-full">
+                  {service.tag}
+                </span>
 
-              {/* Title */}
-              <h3 className="text-lg font-medium text-[var(--primary)] group-hover:text-[var(--accent)] transition-colors">
-                {service.title}
-              </h3>
+                {/* Title */}
+                <h3 className="text-lg font-medium text-[var(--primary)] group-hover:text-[var(--accent)] transition-colors">
+                  {service.title}
+                </h3>
 
-              {/* Description */}
-              <p className="mt-2 text-sm text-gray-500 leading-relaxed">
-                Professional cleaning with advanced tools and eco-friendly solutions tailored to your needs.
-              </p>
+                {/* Description */}
+                <p className="mt-2 text-sm text-gray-500 leading-relaxed">
+                  Professional cleaning with advanced tools and eco-friendly solutions tailored to your needs.
+                </p>
 
-            </motion.div>
-          ))}
+                {/* CTA Buttons */}
+                <div className="mt-4 flex gap-2">
+                  
+                  {/* WhatsApp */}
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center text-sm px-3 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 transition"
+                  >
+                    WhatsApp
+                  </a>
 
+                  {/* Call */}
+                  <a
+                    href="tel:7778889997"
+                    className="flex-1 text-center text-sm px-3 py-2 rounded-lg border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition"
+                  >
+                    Call
+                  </a>
+
+                </div>
+
+              </motion.div>
+            );
+          })}
         </div>
       </Container>
     </section>

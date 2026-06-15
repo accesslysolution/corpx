@@ -18,11 +18,11 @@ export default function HomePage() {
       <Clients />
 
       {/* SERVICES EXPERIENCE */}
-      <IndustryStyleCleaningSection />
       <Services />
 
       {/* PROCESS FLOW */}
       <Process />
+      <IndustryStyleCleaningSection />
     </>
   );
 }

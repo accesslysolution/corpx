@@ -63,7 +63,7 @@ export default function StatsSection() {
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white border border-gray-100 rounded-xl md:rounded-2xl p-4 md:p-6 text-center shadow-sm hover:shadow-md transition-all"
+              className="bg-white border border-gray-100 rounded-xl md:rounded-2xl p-4 md:p-6 text-center shadow-sm hover:shadow-md transition-all cursor-pointer"
             >
               <h3 className="text-xl md:text-4xl font-bold text-[var(--primary)]">
                 <Counter value={stat.value} />

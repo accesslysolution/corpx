@@ -118,18 +118,20 @@ export default function IndustryStyleCleaningSection() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+
+                {/* GRADIENT FOR TITLE VISIBILITY */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 to-transparent" />
               </div>
 
-              {/* TITLE */}
-              <div className="absolute bottom-4 left-4 z-10 text-white">
-                <p className="text-lg font-semibold drop-shadow-md">
+              {/* TITLE - ALWAYS CLEAR */}
+              <div className="absolute bottom-4 left-4 z-10">
+                <p className="text-lg font-semibold text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
                   {service.title}
                 </p>
               </div>
 
-              {/* OVERLAY (IMPROVED FOR CONTRAST) */}
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/75 transition-all duration-500" />
-
+              {/* HOVER DARK OVERLAY (SEPARATE) */}
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/70 transition-all duration-500" />
               {/* HOVER CONTENT */}
               <div className="absolute inset-0 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition-all duration-500 px-6 text-center">
                 

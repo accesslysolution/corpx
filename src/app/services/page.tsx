@@ -25,62 +25,67 @@ const fadeUp: Variants = {
 
 export default function ServicesPage() {
   const services = [
-    {
-      title: "Deep Cleaning Solutions",
-      desc: "Comprehensive end-to-end cleaning for residential and commercial spaces with advanced equipment and trained professionals.",
-      img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952",
-    },
-    {
-      title: "Residential Cleaning Solutions",
-      desc: "Complete home cleaning including bedrooms, kitchens, bathrooms, and living spaces for a hygienic lifestyle.",
-      img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
-    },
-    {
-      title: "Industrial Cleaning Solutions",
-      desc: "Heavy-duty cleaning for factories, warehouses, and industrial setups ensuring safety and compliance.",
-      img: "https://images.unsplash.com/photo-1581090700227-1e37b190418e",
-    },
-    {
-      title: "Corporate Office Cleaning",
-      desc: "Professional office cleaning for workstations, meeting rooms, cabins, and common areas.",
-      img: "https://images.unsplash.com/photo-1581091215367-59ab6b9a1f1f",
-    },
-    {
-      title: "Facade & Glass Cleaning",
-      desc: "High-rise glass and facade cleaning using safety equipment and modern techniques.",
-      img: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a",
-    },
-    {
-      title: "Healthcare Facility Cleaning",
-      desc: "Sanitization and infection-controlled cleaning for hospitals, clinics, and medical facilities.",
-      img: "https://images.unsplash.com/photo-1588776814546-ec7e7c2aaf9b",
-    },
-    {
-      title: "Building & Premises Maintenance",
-      desc: "Routine cleaning and upkeep of societies, buildings, staircases, lifts, and parking areas.",
-      img: "https://images.unsplash.com/photo-1590725140246-20acdee442be",
-    },
-    {
-      title: "Hotel & Commercial Kitchen Cleaning",
-      desc: "Deep cleaning of hotel kitchens, exhaust systems, grease removal, and hygiene compliance.",
-      img: "https://images.unsplash.com/photo-1556911220-bda9f7f7597e",
-    },
-    {
-      title: "Cafe & Restaurant Cleaning",
-      desc: "Food-grade cleaning services ensuring hygiene standards for cafes, restaurants, and dining spaces.",
-      img: "https://images.unsplash.com/photo-1552566626-52f8b828add9",
-    },
-    {
-      title: "Before Possession Cleaning",
-      desc: "Deep cleaning of new properties before handover to ensure a spotless move-in experience.",
-      img: "https://images.unsplash.com/photo-1560184897-ae75f418493e",
-    },
-    {
-      title: "Carpet & Upholstery Cleaning",
-      desc: "Advanced fabric-safe cleaning for carpets, sofas, and upholstery with stain and odor removal.",
-      img: "https://images.unsplash.com/photo-1582582494700-0b8b8b7f3b2f",
-    },
-  ];
+  {
+    title: "Deep Cleaning Solutions",
+    desc: "Complete end-to-end deep cleaning for homes, offices, and commercial spaces using advanced equipment and trained professionals.",
+    img: "/gallery/Deep_Cleaning.avif",
+  },
+  {
+    title: "Residential Cleaning",
+    desc: "Professional home cleaning for apartments and villas covering bedrooms, kitchens, bathrooms, and living spaces.",
+    img: "/gallery/Residential_Cleaning.avif",
+  },
+  {
+    title: "Industrial Cleaning",
+    desc: "Heavy-duty cleaning for factories and warehouses ensuring safety, compliance, and efficient operations.",
+    img: "/gallery/Industrial_Cleaning.avif",
+  },
+  {
+    title: "Corporate Office Cleaning",
+    desc: "Complete office cleaning solutions for workstations, cabins, meeting rooms, and common areas with flexible scheduling.",
+    img: "/gallery/Corporate_Office.avif",
+  },
+  {
+    title: "Facade & Glass Cleaning",
+    desc: "High-rise facade and glass cleaning with modern tools ensuring a streak-free finish and complete safety.",
+    img: "/gallery/Facade.avif",
+  },
+  {
+    title: "Healthcare Facility Cleaning",
+    desc: "Hospital-grade sanitization and infection-controlled cleaning for clinics, hospitals, and medical facilities.",
+    img: "/gallery/Healthcare.avif",
+  },
+  {
+    title: "Before Possession Cleaning",
+    desc: "Deep cleaning of new properties before handover to ensure a spotless and move-in-ready space.",
+    img: "/gallery/Before_Possession.avif",
+  },
+  {
+    title: "Carpet Cleaning",
+    desc: "Deep carpet cleaning with stain removal, odor control, and quick drying technology.",
+    img: "/gallery/Carpet.avif",
+  },
+  {
+    title: "Upholstery Cleaning",
+    desc: "Fabric-safe cleaning for sofas and upholstery removing dust, stains, and allergens effectively.",
+    img: "/gallery/Upholstery.avif",
+  },
+  {
+    title: "Hotel & Kitchen Cleaning",
+    desc: "Deep cleaning of hotel kitchens with grease removal and hygiene compliance for safe food preparation.",
+    img: "/gallery/Hotel.avif",
+  },
+  {
+    title: "Cafe & Restaurant Cleaning",
+    desc: "Food-grade cleaning services for cafes and restaurants ensuring hygiene and FSSAI compliance.",
+    img: "/gallery/Cafe.avif",
+  },
+  {
+    title: "Building & Premises Maintenance",
+    desc: "Routine cleaning and maintenance of buildings, societies, parking areas, and common spaces.",
+    img: "/gallery/Building_Premises.avif",
+  },
+];
 
   return (
     <motion.section

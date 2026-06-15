@@ -116,7 +116,7 @@ export default function ContactPage() {
                 <Phone className="text-[var(--accent)]" />
                 <h3 className="font-medium text-white">Phone Support</h3>
               </div>
-              <p className="text-gray-300">+91 98765 43210</p>
+              <p className="text-gray-300">+91 7778889997</p>
             </motion.div>
 
             <motion.div variants={fadeUp} className="bg-white/5 border border-white/10 rounded-2xl p-6">
@@ -124,7 +124,7 @@ export default function ContactPage() {
                 <MapPin className="text-[var(--accent)]" />
                 <h3 className="font-medium text-white">Office</h3>
               </div>
-              <p className="text-gray-300">Pune, Maharashtra, India</p>
+              <p className="text-gray-300">Katepuram Chowk, Sangavi, Pune, Maharashtra, India</p>
             </motion.div>
 
             <motion.div variants={fadeUp} className="bg-linear-to-r from-[var(--accent)]/20 to-transparent border border-white/10 rounded-2xl p-6">
