@@ -34,7 +34,7 @@ export default function GalleryView() {
               className="relative break-inside-avoid rounded-3xl overflow-hidden shadow-lg bg-white group cursor-pointer"
             >
               <video
-                src={`/videos/${index + 1}.mp4`}
+                src={`/${index + 1}.mp4`}
                 className="w-full h-auto block"
                 autoPlay
                 muted
