@@ -111,10 +111,10 @@ export default function ServicesSlider() {
           {/* Videos (Smaller Size) */}
           <div className="flex gap-4">
             <div className="w-[140px] md:w-[180px] aspect-[9/16] rounded-xl overflow-hidden shadow-md">
-              <video src="/gallery/Video/1.webm" className="w-full h-full object-cover" autoPlay muted loop playsInline />
+              <video src="/gallery/video/1.webm" className="w-full h-full object-cover" autoPlay muted loop playsInline />
             </div>
             <div className="w-[140px] md:w-[180px] aspect-[9/16] rounded-xl overflow-hidden shadow-md">
-              <video src="/gallery/Video/2.webm" className="w-full h-full object-cover" autoPlay muted loop playsInline />
+              <video src="/gallery/video/2.webm" className="w-full h-full object-cover" autoPlay muted loop playsInline />
             </div>
           </div>
 

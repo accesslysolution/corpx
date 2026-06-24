@@ -15,9 +15,9 @@ export default function HomePage() {
 
       {/* TRUST + SOCIAL PROOF */}
       <StatsSection />
+      <GalleryView />
       <ServicesSlider />
       <Clients />
-      <GalleryView />
 
 
       {/* SERVICES EXPERIENCE */}
