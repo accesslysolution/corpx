@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+// Components
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingContactButtons from "@/components/ui/floatingCTA";
+import Preloader from "@/components/ui/preloader"; // Added import
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,6 +41,9 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} antialiased bg-white text-gray-900`}>
         
+        {/* Preloader - Renders first */}
+        <Preloader />
+
         {/* App Shell */}
         <div className="flex min-h-screen flex-col">
           
