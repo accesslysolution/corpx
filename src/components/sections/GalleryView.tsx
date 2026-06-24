@@ -1,9 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
-// Combined data for better management
-const galleryItems = [
+interface GalleryItem {
+  name: string;
+  url: string;
+}
+
+const galleryItems: GalleryItem[] = [
   { name: "Deep Cleaning", url: "https://res.cloudinary.com/doht6hdhs/video/upload/v1782331723/1_nia5il.mp4" },
   { name: "Facade Cleaning", url: "https://res.cloudinary.com/doht6hdhs/video/upload/v1782331718/2_cduqtm.mp4" },
   { name: "Corporate Office Cleaning", url: "https://res.cloudinary.com/doht6hdhs/video/upload/v1782331702/3_xqd2ct.mp4" },
@@ -25,6 +30,44 @@ const galleryItems = [
   { name: "Sofa Cleaning", url: "https://res.cloudinary.com/doht6hdhs/video/upload/v1782331731/20_cc1ukc.mp4" }
 ];
 
+const VideoCard = ({ item }: { item: GalleryItem }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.02 }}
+      className="relative break-inside-avoid rounded-3xl overflow-hidden shadow-lg bg-white group cursor-pointer"
+      onMouseEnter={() => videoRef.current?.play()}
+      onMouseLeave={() => {
+        videoRef.current?.pause();
+        if (videoRef.current) videoRef.current.currentTime = 0;
+      }}
+    >
+      <video
+        ref={videoRef}
+        src={item.url}
+        className="w-full h-auto block"
+        muted
+        loop
+        playsInline
+        preload="metadata"
+      />
+      
+      {/* Modern Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 p-3 rounded-2xl">
+          <h3 className="text-white font-semibold text-sm tracking-wide">
+            {item.name}
+          </h3>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 export default function GalleryView() {
   return (
     <section className="w-full py-16 bg-slate-50">
@@ -36,32 +79,7 @@ export default function GalleryView() {
 
         <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
           {galleryItems.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-              className="relative break-inside-avoid rounded-3xl overflow-hidden shadow-lg bg-white group cursor-pointer"
-            >
-              <video
-                src={item.url}
-                className="w-full h-auto block"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="none" // Added to keep initial load times fast
-              />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5">
-                <div className="backdrop-blur-md bg-white/10 border border-white/20 p-3 rounded-2xl">
-                  <h3 className="text-white font-semibold text-sm tracking-wide">
-                    {item.name}
-                  </h3>
-                </div>
-              </div>
-            </motion.div>
+            <VideoCard key={`${item.name}-${index}`} item={item} />
           ))}
         </div>
       </div>
