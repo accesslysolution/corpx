@@ -40,7 +40,7 @@ export default function Services() {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {services.map((service, i) => {
             const whatsappMessage = `Hi, I'm interested in ${service.title}. Can you share more details?`;
-            const whatsappLink = `https://wa.me/917778889997?text=${encodeURIComponent(whatsappMessage)}`;
+            const whatsappLink = `https://wa.me/919595000022?text=${encodeURIComponent(whatsappMessage)}`;
 
             return (
               <motion.div
@@ -87,7 +87,7 @@ export default function Services() {
 
                   {/* Call */}
                   <a
-                    href="tel:7778889997"
+                    href="tel:9595000022"
                     className="flex-1 text-center text-sm px-3 py-2 rounded-lg border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition"
                   >
                     Call

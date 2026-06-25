@@ -47,13 +47,13 @@ export default function Footer() {
             {/* Elevated Contact Items */}
             <div className="space-y-4 text-sm mt-auto">
               <a
-                href="tel:+917778889997"
+                href="tel:+919595000022"
                 className="group flex items-center gap-4 w-fit text-[var(--muted)] hover:text-white transition-colors duration-300"
               >
                 <div className="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300">
                   <Phone size={14} className="group-hover:text-white" />
                 </div>
-                <span className="tracking-wide">+91 77788 89997</span>
+                <span className="tracking-wide">+91 95950 00022</span>
               </a>
 
               <a
@@ -67,7 +67,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://wa.me/917778889997?text=Hi%20I%20need%20cleaning%20service"
+                href="https://wa.me/919595000022?text=Hi%20I%20need%20cleaning%20service"
                 target="_blank"
                 rel="noreferrer"
                 className="group flex items-center gap-4 w-fit text-[var(--muted)] hover:text-white transition-colors duration-300"
