@@ -57,13 +57,13 @@ export default function Footer() {
               </a>
 
               <a
-                href="mailto:contact@corpx.in"
+                href="mailto:corpx.companny@gmail.com"
                 className="group flex items-center gap-4 w-fit text-[var(--muted)] hover:text-white transition-colors duration-300"
               >
                 <div className="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 border border-white/10 group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] transition-all duration-300">
                   <Mail size={14} className="group-hover:text-white" />
                 </div>
-                <span className="tracking-wide">contact@corpx.in</span>
+                <span className="tracking-wide">corpx.companny@gmail.com</span>
               </a>
 
               <a
