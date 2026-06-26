@@ -13,13 +13,11 @@ const services = [
   "Industrial Cleaning",
   "Corporate Office Cleaning",
   "Facade & Glass Cleaning",
-  "Healthcare Facility Cleaning",
   "Before Possession Cleaning",
   "Carpet Cleaning",
-  "Upholstery Cleaning",
   "Hotel & Kitchen Cleaning",
-  "Cafe & Restaurant Cleaning",
-  "Building & Premises Maintenance",
+  "Construction Site Cleaning",
+  "Before Possession Cleaning"
 ];
 
 /* ✅ VARIANTS */
