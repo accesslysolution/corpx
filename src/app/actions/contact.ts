@@ -20,24 +20,22 @@ export async function submitContactForm(_prevState: any, formData: FormData) {
 
     if (dbError) throw dbError;
 
-    // 2. Send email to yourself (Business Notification)
-    await resend.emails.send({
-      from: "onboarding@yourdomain.com", // Must be a verified domain in Resend
-      to: "your-email@example.com",
+    // 2. Send email to yourself (Business Notification only)
+    const { error: emailError } = await resend.emails.send({
+      from: "onboarding@resend.dev", // Use this if you haven't verified your own domain yet
+      to: "accesslysolution@gmail.com",
       subject: "New Enquiry Received",
-      html: `<p>New submission from <strong>${name}</strong></p>
-             <p>Service: ${service}</p>
-             <p>Message: ${message}</p>`,
+      html: `
+        <h2>New Service Enquiry</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Service:</strong> ${service}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `,
     });
 
-    // 3. Send Thank You email to the User
-    await resend.emails.send({
-      from: "onboarding@yourdomain.com",
-      to: email, // Sending to the user who submitted the form
-      subject: "Thank you for contacting us!",
-      html: `<p>Hi ${name},</p>
-             <p>Thanks for reaching out! We have received your request for <strong>${service}</strong> and will get back to you soon.</p>`,
-    });
+    if (emailError) throw emailError;
 
     return { success: true, message: "Message sent successfully!" };
   } catch (error) {

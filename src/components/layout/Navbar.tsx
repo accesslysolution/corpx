@@ -1,10 +1,13 @@
 "use client";
 import { useState } from "react";
+import { useActionState } from "react";
 import { motion } from "framer-motion";
 import { Home, Briefcase, Mail, Calendar } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { submitContactForm } from "@/app/actions/contact";
+import ContactModal from "@/components/ui/ContactModal";
 
 const navLinks = [
   { name: "Home", href: "/", icon: Home },
@@ -14,23 +17,24 @@ const navLinks = [
 
 export default function Navbar() {
   const [active, setActive] = useState("Home");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [state, action, pending] = useActionState(submitContactForm, null);
+
+  // Auto-close modal on success
+  if (state?.success && isModalOpen) {
+    setTimeout(() => setIsModalOpen(false), 2500);
+  }
 
   return (
     <>
       {/* DESKTOP NAVBAR */}
       <header className="hidden md:flex fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-8 py-2 flex justify-between items-center w-full">
-
-          {/* ✅ LOGO (NOW SAME AS MOBILE - CROPPED) */}
           <Link href="/" className="flex items-center">
             <div className="h-8 overflow-hidden flex items-center">
               <Image 
-                src="/logo.avif" 
-                alt="CorpX Logo" 
-                width={100} 
-                height={40}
-                className="object-cover translate-y-[-6px]"
-                priority
+                src="/logo.avif" alt="CorpX Logo" width={100} height={40}
+                className="object-cover translate-y-[-6px]" priority
               />
             </div>
           </Link>
@@ -43,7 +47,10 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <button className="bg-[var(--primary)] text-white px-5 py-2 rounded-full text-sm hover:opacity-90 transition-opacity">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="bg-[var(--primary)] text-white px-5 py-2 rounded-full text-sm hover:opacity-90 transition-opacity cursor-pointer"
+          >
             Get Quote
           </button>
         </div>
@@ -51,22 +58,19 @@ export default function Navbar() {
 
       {/* MOBILE TOP HEADER */}
       <header className="md:hidden fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-5 py-3 flex justify-between items-center">
-        
-        {/* ✅ MOBILE LOGO (UNCHANGED) */}
         <Link href="/" className="flex items-center">
           <div className="h-8 overflow-hidden flex items-center">
             <Image 
-              src="/logo.avif" 
-              alt="CorpX Logo" 
-              width={100} 
-              height={40}
-              className="object-cover translate-y-[-6px]"
-              priority
+              src="/logo.avif" alt="CorpX Logo" width={100} height={40}
+              className="object-cover translate-y-[-6px]" priority
             />
           </div>
         </Link>
 
-        <button className="bg-[var(--primary)] text-white px-4 py-1.5 rounded-full text-xs shadow-md active:scale-95 transition">
+        <button 
+          onClick={() => setIsModalOpen(true)}
+          className="bg-[var(--primary)] text-white px-4 py-1.5 rounded-full text-xs shadow-md active:scale-95 transition cursor-pointer"
+        >
           Get Quote
         </button>
       </header>
@@ -87,12 +91,23 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Floating CTA */}
-          <button className="bg-[var(--accent)] p-3 rounded-full text-white shadow-lg active:scale-95 transition">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="bg-[var(--accent)] p-3 rounded-full text-white shadow-lg active:scale-95 transition cursor-pointer"
+          >
             <Calendar size={20} />
           </button>
         </div>
       </motion.nav>
+
+      {/* THE MODAL */}
+      <ContactModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)}
+        action={action}
+        pending={pending}
+        state={state}
+      />
     </>
   );
 }
