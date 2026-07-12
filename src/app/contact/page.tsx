@@ -26,7 +26,7 @@ export default function ContactPage() {
         <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={mainVariants}
           className="text-center mb-16 flex flex-col items-center"
         >
@@ -50,7 +50,7 @@ export default function ContactPage() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: false, amount: 0.1 }}
             variants={mainVariants}
           >
             <ContactForm action={action} pending={pending} state={state} />
@@ -60,7 +60,7 @@ export default function ContactPage() {
           <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: false, amount: 0.1 }}
             variants={{
               visible: { transition: { staggerChildren: 0.2 } }
             }}

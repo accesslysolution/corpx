@@ -1,0 +1,60 @@
+/* ==========================================================================
+   ELITE SPATIAL FLOATING ACTION SYSTEM SPECIFICATIONS
+   ========================================================================== */
+
+.premium-floating-trigger {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  will-change: transform, box-shadow, width;
+  transform-style: preserve-3d;
+  transition: 
+    background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Luxury Multi-Stage Radar Pulse Loop */
+.radar-pulse-ring {
+  position: absolute;
+  inset: -1px;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: -1;
+  animation: architecturalRadar 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes architecturalRadar {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+    box-shadow: 0 0 0 0px rgba(0, 111, 227, 0.3);
+  }
+  70% {
+    opacity: 0;
+    box-shadow: 0 0 0 16px rgba(0, 111, 227, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.whatsapp-pulse-ring {
+  animation: whatsappRadar 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes whatsappRadar {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+    box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.3);
+  }
+  70% {
+    opacity: 0;
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

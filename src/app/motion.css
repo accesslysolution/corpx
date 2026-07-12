@@ -1,0 +1,76 @@
+/* ==========================================================================
+   PREMIUM 3D MOTION & INTERACTION PHYSICS ARCHITECTURE
+   ========================================================================== */
+
+:root {
+  --perspective-deep: 1200px;
+  --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Base 3D Viewport Setup */
+.perspective-container {
+  perspective: var(--perspective-deep);
+  transform-style: preserve-3d;
+}
+
+/* Premium 3D Soft Hover Card Effect */
+.card-3d-luxury {
+  transition: var(--transition-premium);
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+.card-3d-luxury:hover {
+  transform: translateY(-8px) rotateX(4deg) rotateY(-2deg) translateZ(10px);
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 111, 227, 0.07),
+    0 30px 60px -30px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 111, 227, 0.04);
+}
+
+/* 3D Deep Depth Interior Elements */
+.depth-layer-1 { transform: translateZ(20px); }
+.depth-layer-2 { transform: translateZ(40px); }
+.depth-layer-3 { transform: translateZ(60px); }
+
+/* Hyper-Targeted Accent Micro-Interaction (#fe4d01) */
+.cta-magnetic-orange {
+  transition: var(--transition-bounce);
+  position: relative;
+}
+
+.cta-magnetic-orange:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 24px -10px rgba(254, 77, 1, 0.35);
+}
+
+.cta-magnetic-orange:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Ambient Clean Air Floating Effect */
+@keyframes floatAmbient {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float-clean {
+  animation: floatAmbient 6s ease-in-out infinite;
+}
+
+/* Hardware-Accelerated Smooth Entrance Backups */
+.reveal-preset {
+  opacity: 0;
+  transform: translateY(20px) translateZ(-10px);
+  will-change: transform, opacity;
+  animation: elegantEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes elegantEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
+}

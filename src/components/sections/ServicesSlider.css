@@ -1,0 +1,18 @@
+/* ==========================================================================
+   ADVANCED WIDESCREEN 3D COVERFLOW PERSPECTIVE HUB
+   ========================================================================== */
+
+.coverflow-3d-viewport {
+  perspective: 1600px;
+  transform-style: preserve-3d;
+}
+
+.coverflow-3d-track {
+  transform-style: preserve-3d;
+}
+
+.spatial-card-container {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

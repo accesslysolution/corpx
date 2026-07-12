@@ -1,0 +1,91 @@
+/* ==========================================================================
+   ELITE HIGH-FIDELITY FAQS INDEX CANVAS ARCHITECTURE
+   ========================================================================== */
+
+.faqs-luxury-canvas {
+  background: radial-gradient(circle at top right, rgba(0, 111, 227, 0.012) 0%, transparent 45%),
+              radial-gradient(circle at bottom left, rgba(0, 111, 227, 0.01) 0%, transparent 50%),
+              #f8fafc;
+}
+
+.faq-split-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .faq-split-workspace {
+    flex-direction: row;
+    gap: 5rem;
+  }
+}
+
+.faq-sticky-sidebar {
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .faq-sticky-sidebar {
+    position: sticky;
+    top: 7.5rem;
+    height: fit-content;
+    width: 30%;
+  }
+}
+
+.faq-content-stack {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .faq-content-stack {
+    width: 70%;
+  }
+}
+
+.category-nav-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: #6b7280;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.category-nav-button.active {
+  background-color: #ffffff;
+  color: #006fe3;
+  border-color: rgba(0, 111, 227, 0.15);
+  box-shadow: 0 10px 25px -10px rgba(0, 111, 227, 0.06);
+}
+
+.accordion-matrix-box {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -10px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.4s ease;
+}
+
+.accordion-matrix-box:hover {
+  border-color: rgba(0, 111, 227, 0.2);
+}
+
+.faq-gpu-accelerate {
+  will-change: transform, opacity, height;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

@@ -1,0 +1,53 @@
+/* ==========================================================================
+   LUXURY HIGH-END EDITORIAL ABOUT PAGE ARCHITECTURE
+   ========================================================================== */
+
+.about-luxury-canvas {
+  background: radial-gradient(circle at top left, rgba(0, 111, 227, 0.015) 0%, transparent 45%),
+              radial-gradient(circle at bottom right, rgba(0, 111, 227, 0.01) 0%, transparent 50%),
+              #ffffff;
+}
+
+.about-split-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .about-split-matrix {
+    flex-direction: row;
+    gap: 6rem;
+  }
+}
+
+.about-sticky-aside {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .about-sticky-aside {
+    position: sticky;
+    top: 8rem;
+    height: fit-content;
+  }
+}
+
+.difference-cell-tile {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow, border-color;
+}
+
+.difference-cell-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 
+    0 24px 48px -20px rgba(0, 0, 0, 0.04),
+    0 10px 20px -20px rgba(0, 0, 0, 0.02);
+}
+
+.about-gpu-accelerate {
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

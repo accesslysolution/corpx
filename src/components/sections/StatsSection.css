@@ -1,0 +1,45 @@
+/* ==========================================================================
+   ELITE FINANCIAL-GRADE METRIC ENGINE ARCHITECTURE
+   ========================================================================== */
+
+.stats-luxury-viewport {
+  position: relative;
+  background: radial-gradient(circle at top left, rgba(0, 111, 227, 0.015) 0%, transparent 40%),
+              radial-gradient(circle at bottom right, rgba(0, 111, 227, 0.01) 0%, transparent 50%);
+}
+
+.architectural-cell {
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: transparent;
+}
+
+/* Luxury Widescreen Cell Light Leak Expansion Interaction */
+.architectural-cell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 100%);
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.architectural-cell:hover::before {
+  opacity: 1;
+}
+
+.architectural-cell:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 40px 80px -25px rgba(0, 111, 227, 0.09),
+    0 20px 40px -30px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+/* Micro-Grid Performance Safeguards */
+.metric-gpu-accelerate {
+  will-change: transform, box-shadow;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}

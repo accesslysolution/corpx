@@ -1,0 +1,32 @@
+.why-split-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .why-split-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.why-editorial-sticky {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .why-editorial-sticky {
+    position: sticky;
+    top: 6rem;
+    height: fit-content;
+  }
+}
+
+.premium-feature-tile {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-feature-tile:hover {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.03);
+}

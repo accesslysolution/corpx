@@ -1,0 +1,35 @@
+/* ==========================================================================
+   HERO CAROUSEL VISUAL METRIC LAYERS & 3D PHYSICS
+   ========================================================================== */
+
+.hero-perspective-canvas {
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+/* Luxury Interactive Floating Frame Architecture */
+.parallax-glass-card {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.4s ease;
+  will-change: transform, box-shadow, filter;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Custom Depth-Step Offsets for Individual Parallax Layers */
+.depth-tier-high { transform: translateZ(40px); }
+.depth-tier-mid { transform: translateZ(20px); }
+
+/* Premium Video Masking Layer */
+.video-mask-canvas {
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+}
+
+.frosted-pill-badge {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 111, 227, 0.08);
+}

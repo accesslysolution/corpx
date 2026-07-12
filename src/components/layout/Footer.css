@@ -1,0 +1,71 @@
+/* ==========================================================================
+   ELITE EDITORIAL TERMINAL GRID INTERACTION ENGINE
+   ========================================================================= */
+
+.footer-luxury-canvas {
+  background: radial-gradient(circle at 50% 100%, rgba(0, 111, 227, 0.012) 0%, transparent 60%),
+              #fcfcfc;
+}
+
+/* Master Closing CTA Spatial Box */
+.terminal-cta-box {
+  background: radial-gradient(circle at top left, rgba(0, 111, 227, 0.08) 0%, transparent 40%),
+              #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-cta-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.02), transparent);
+  pointer-events: none;
+}
+
+.architectural-footer-link {
+  position: relative;
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.architectural-footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #006fe3;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.architectural-footer-link:hover {
+  color: #006fe3;
+  transform: translateX(4px);
+}
+
+.architectural-footer-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.footer-action-trigger {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow, background-color;
+}
+
+.footer-action-trigger:hover {
+  background-color: #006fe3;
+  border-color: #006fe3;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -12px rgba(0, 111, 227, 0.25);
+}
+
+.footer-gpu-accelerate {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}

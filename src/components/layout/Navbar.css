@@ -1,0 +1,53 @@
+/* ==========================================================================
+   ELITE HIGH-FIDELITY NAVBAR INTERACTION SPECIFICATIONS
+   ========================================================================== */
+
+.nav-desktop-canvas {
+  will-change: transform, background-color, border-color;
+  transition: 
+    background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-premium-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Premium Desktop Hover Accent Shutter Underline */
+.nav-link-premium-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 100%;
+  height: 1.5px;
+  background-color: #006fe3;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-premium-wrapper:hover .nav-link-premium-text::after {
+  transform: translateX(-50%) scaleX(0.5);
+}
+
+/* Hardware-Accelerated Mobile View Controls (Standard Configurations Maintained) */
+.bottom-dock-blur {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.nav-gpu-accelerate {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}

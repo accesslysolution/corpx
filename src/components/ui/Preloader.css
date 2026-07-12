@@ -1,0 +1,50 @@
+/* ==========================================================================
+   ELITE ARCHITECTURAL REVEAL PRELOADER CORE
+   ========================================================================== */
+
+.preloader-luxury-curtain {
+  position: fixed;
+  inset: 0;
+  background-color: #ffffff;
+  z-index: 100;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Luxury Fine-Line Grid Backdrop Matrix */
+.preloader-mesh-matrix {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 111, 227, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 111, 227, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.preloader-content-core {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Microscopic Clip-Mask Shutter Reveal */
+.logo-mask-shutter {
+  overflow: hidden;
+  position: relative;
+}
+
+.preloader-gpu-layer {
+  will-change: transform, opacity, clip-path;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

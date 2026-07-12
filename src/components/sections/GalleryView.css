@@ -1,0 +1,30 @@
+/* ==========================================================================
+   LUXURY ARCHITECTURAL MASONRY GRAPHICS FRAMEWORK
+   ========================================================================== */
+
+.masonry-luxury-grid {
+  column-gap: 1.5rem;
+  space-y: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .masonry-luxury-grid { column-count: 2; }
+}
+
+@media (min-width: 768px) {
+  .masonry-luxury-grid { column-count: 3; }
+}
+
+@media (min-width: 1024px) {
+  .masonry-luxury-grid { column-count: 4; }
+}
+
+.portfolio-media-container {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.filter-pill-transition {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}

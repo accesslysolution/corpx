@@ -1,0 +1,29 @@
+/* ==========================================================================
+   ELITE STEP ARCHITECTURE GRID SPECIFICATIONS
+   ========================================================================== */
+
+.process-luxury-canvas {
+  background: radial-gradient(circle at top right, rgba(0, 111, 227, 0.015) 0%, transparent 40%),
+              linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%);
+}
+
+.architectural-step-tile {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #ffffff;
+}
+
+.architectural-step-tile:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 111, 227, 0.25);
+  box-shadow: 
+    0 30px 60px -20px rgba(0, 111, 227, 0.08),
+    0 12px 24px -24px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+}
+
+.step-gpu-accelerate {
+  will-change: transform, box-shadow;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
