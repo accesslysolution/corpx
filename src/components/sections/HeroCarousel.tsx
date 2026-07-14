@@ -64,13 +64,13 @@ export default function HeroCarousel() {
             <div className="inline-flex items-center gap-2 frosted-pill-badge rounded-full px-4 py-1.5 shadow-sm bg-white/80 border border-neutral-200/50">
               <MapPin size={13} className="text-[#006fe3]" />
               <span className="text-[11px] font-bold tracking-wider uppercase text-neutral-800 font-body">
-                Premium Standards &bull; Pune Region
+                Premium Standards &bull;
               </span>
             </div>
 
             {/* Target SEO Optimized Widescreen Heading */}
             <h1 className="font-heading font-extrabold text-neutral-900 text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.1] tracking-tight">
-              Pune's Most Trusted <br />
+              Most Trusted <br />
               <span className="text-[#006fe3] bg-gradient-to-r from-[#006fe3] to-[#005bc4] bg-clip-text text-transparent">
                 Deep Cleaning
               </span> Service <br />
@@ -81,7 +81,7 @@ export default function HeroCarousel() {
 
             {/* Subheadline Structural Description */}
             <p className="font-body text-neutral-600 text-base sm:text-lg md:text-xl font-medium max-w-xl leading-relaxed">
-              Expert cleaning professionals. Safe, proven products. Results you can see — and feel. Serving Pune since 2016.
+              Expert cleaning professionals. Safe, proven products. Results you can see — and feel. Serving in Pune, Mumbai, Hydrabad & Bangalore since 2016.
             </p>
 
             <div className="flex flex-wrap gap-x-6 gap-y-2 pt-1 text-xs font-bold font-body text-neutral-500 uppercase tracking-wide">

@@ -9,96 +9,17 @@ import {
   Phone, 
   Sparkles, 
   ArrowUpRight, 
-  ArrowRight,
-  Home, 
-  CookingPot, 
-  Bath, 
-  Sofa, 
-  Building2,
-  Layers, 
-  ShieldCheck, 
-  Bug 
+  ArrowRight 
 } from "lucide-react";
 import { Container } from "../ui/Container";
+// Imported directly from your centralized data file
+import { getServicesByLocation, ServiceItem } from "@/data/servicesData"; 
 import "./Services.css";
 
-interface ServiceItem {
-  title: string;
-  tag: string;
-  img: string;
-  description: string;
-  stats: string[];
-  rating: number;
-  icon: any;
-}
-
-const services: ServiceItem[] = [
-  { 
-    title: "Home Deep Cleaning", 
-    tag: "Residential", 
-    img: "/gallery/Deep_Cleaning.avif", 
-    description: "Full-house refresh that goes beyond the surface",
-    stats: ["Deep carpet & floor descaling", "Comprehensive dust extraction"], 
-    rating: 5,
-    icon: Home
-  },
-  { 
-    title: "Kitchen Deep Cleaning", 
-    tag: "Hygiene Focus", 
-    img: "/gallery/Hotel.avif", 
-    description: "Grease, grime, and hidden buildup — completely removed",
-    stats: ["Carbon extraction vents", "Food-safe sanitization paths"], 
-    rating: 5,
-    icon: CookingPot
-  },
-{ 
-    title: "Facade Cleaning", 
-    tag: "High-Rise Specialist", 
-    img: "/gallery/Facade.avif", 
-    description: "Streak-free exterior glass, certified safety matrices, and spotless architectural finishes",
-    stats: ["Certified safety rigging", "Heavy carbon & dust removal"], 
-    rating: 5,
-    icon: Layers
-  },
-  { 
-    title: "Sofa & Upholstery Cleaning", 
-    tag: "Furniture Care", 
-    img: "/gallery/Upholstery.avif", 
-    description: "Restore the freshness of your furniture",
-    stats: ["Deep fabric extraction", "Stain & odor elimination"], 
-    rating: 5,
-    icon: Sofa
-  },
-  { 
-    title: "Office Deep Cleaning", 
-    tag: "Commercial", 
-    img: "/gallery/Corporate_Office.avif", 
-    description: "A clean workspace your team deserves",
-    stats: ["Tech station cleaning", "After-hours scheduling shifts"], 
-    rating: 5,
-    icon: Building2
-  },
-  { 
-    title: "Sanitization Services", 
-    tag: "Critical Care", 
-    img: "/gallery/Healthcare.avif", 
-    description: "Disinfection for high-touch surfaces and shared spaces",
-    stats: ["Hospital-grade formulations", "Area protection tracking"], 
-    rating: 5,
-    icon: ShieldCheck
-  },
-  { 
-    title: "Pest Control", 
-    tag: "Specialized", 
-    img: "/gallery/Building_Premises.avif", 
-    description: "Long-lasting protection from common pests",
-    stats: ["Targeted barrier shield", "Eco-certified applications"], 
-    rating: 5,
-    icon: Bug
-  }
-];
-
 export default function Services() {
+  // Retrieve all 13 services formatted for your primary overview display (defaulting to Pune)
+  const services: ServiceItem[] = getServicesByLocation("Pune");
+
   return (
     <section className="w-full py-24 md:py-32 services-luxury-canvas relative border-b border-neutral-200/60 overflow-hidden">
       <Container>
@@ -116,7 +37,7 @@ export default function Services() {
           </h2>
           <div className="w-12 h-[2px] bg-[#006fe3] my-2" />
           <p className="font-body text-sm sm:text-base text-neutral-600 font-medium max-w-xl leading-relaxed">
-            From a single room to an entire commercial facility, we have a cleaning solution that fits. Explore our range of professional cleaning services in Pune:
+            From a single room to an entire commercial facility, we have a cleaning solution that fits. Explore our range of professional cleaning services across Pune, Mumbai, Bangalore, and Hyderabad:
           </p>
         </div>
 
@@ -126,14 +47,26 @@ export default function Services() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {services.map((service, i) => {
             const IconComponent = service.icon;
+            
+            // Extract a concise summary from the detailed description for the card overview
+            const conciseDesc = service.desc.length > 95 
+              ? `${service.desc.substring(0, 95)}...` 
+              : service.desc;
+
+            // Grab the first two features to serve as the visual bullet highlights
+            const displayStats = service.features.slice(0, 2).map(feat => {
+              const colonIndex = feat.indexOf(":");
+              return colonIndex !== -1 ? feat.substring(0, colonIndex) : feat;
+            });
+
             return (
               <motion.div
-                key={service.title}
+                key={service.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.1 }}
-                transition={{ type: "spring", stiffness: 140, damping: 22, delay: i * 0.04 }}
-                className="group flex flex-col service-spatial-tile border border-neutral-200/70 rounded-2xl overflow-hidden"
+                transition={{ type: "spring", stiffness: 140, damping: 22, delay: (i % 3) * 0.08 }}
+                className="group flex flex-col service-spatial-tile border border-neutral-200/70 rounded-2xl overflow-hidden bg-white"
               >
                 {/* Image Container w/ Hardware Layer Scrim */}
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-100 border-b border-neutral-100">
@@ -147,7 +80,7 @@ export default function Services() {
                   
                   {/* Floating Modern Pill Badge */}
                   <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-                    <span className="premium-pill-tag text-[9px] font-bold tracking-wider uppercase text-neutral-800 font-body px-3 py-1.5 rounded-sm shadow-xs flex items-center gap-1.5">
+                    <span className="premium-pill-tag bg-white/95 backdrop-blur-md text-[9px] font-bold tracking-wider uppercase text-neutral-800 font-body px-3 py-1.5 rounded-sm shadow-xs flex items-center gap-1.5">
                       <IconComponent size={11} className="text-[#006fe3]" />
                       {service.tag}
                     </span>
@@ -164,18 +97,18 @@ export default function Services() {
                     {/* Headline Title Link */}
                     <h3 className="font-heading font-bold text-neutral-900 text-lg sm:text-xl tracking-tight leading-snug flex items-center justify-between group-hover:text-[#006fe3] transition-colors duration-300">
                       {service.title}
-                      <ArrowUpRight size={16} className="text-neutral-300 group-hover:text-[#006fe3] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                      <ArrowUpRight size={16} className="text-neutral-300 group-hover:text-[#006fe3] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0 ml-2" />
                     </h3>
 
                     {/* Primary Highlight Sub-Text */}
                     <p className="font-body text-xs sm:text-sm text-neutral-900 font-semibold leading-relaxed border-l-2 border-[#006fe3] pl-3 py-0.5 bg-neutral-50/50 rounded-r-sm">
-                      {service.description}
+                      {conciseDesc}
                     </p>
                     
                     {/* Secondary Technical Parameters */}
                     <ul className="space-y-2 pt-1">
-                      {service.stats.map((stat, idx) => (
-                        <li key={idx} className="font-body text-xs text-neutral-500 font-medium flex items-center gap-2.5">
+                      {displayStats.map((stat, idx) => (
+                        <li key={idx} className="font-body text-xs text-neutral-500 font-medium flex items-center gap-2.5 line-clamp-1">
                           <span className="w-1 h-1 rounded-full bg-neutral-300 shrink-0" /> 
                           {stat}
                         </li>
@@ -189,12 +122,12 @@ export default function Services() {
                           <Star 
                             key={idx} 
                             size={11} 
-                            className={`${idx < service.rating ? "fill-[#006fe3] text-[#006fe3]" : "fill-neutral-200 text-neutral-200"}`} 
+                            className="fill-[#006fe3] text-[#006fe3]" 
                           />
                         ))}
                       </div>
                       <span className="text-[9px] font-bold tracking-wider text-neutral-400 font-body uppercase ml-1">
-                        {service.rating}.0 Audited Outcomes
+                        5.0 Audited Outcomes
                       </span>
                     </div>
                   </div>
@@ -207,7 +140,7 @@ export default function Services() {
                       href={`https://wa.me/919595000022?text=${encodeURIComponent(`Hi, I am reaching out to inquire regarding your premier ${service.title} plan.`)}`} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex-1 text-center font-body font-bold text-[11px] tracking-widest uppercase py-3.5 px-4 rounded-sm bg-neutral-50 text-neutral-700 border border-neutral-200/70 action-contact-trigger flex items-center justify-center gap-2 hover:bg-[#25d366] hover:text-white hover:border-[#25d366]"
+                      className="flex-1 text-center font-body font-bold text-[11px] tracking-widest uppercase py-3.5 px-4 rounded-sm bg-neutral-50 text-neutral-700 border border-neutral-200/70 action-contact-trigger flex items-center justify-center gap-2 hover:bg-[#25d366] hover:text-white hover:border-[#25d366] transition-colors"
                     >
                       <MessageCircle size={14} className="shrink-0" />
                       WhatsApp
@@ -215,7 +148,7 @@ export default function Services() {
                     
                     <a 
                       href="tel:9595000022" 
-                      className="flex-1 text-center font-body font-bold text-[11px] tracking-widest uppercase py-3.5 px-4 rounded-sm bg-neutral-900 text-white action-contact-trigger flex items-center justify-center gap-2 hover:bg-[#006fe3]"
+                      className="flex-1 text-center font-body font-bold text-[11px] tracking-widest uppercase py-3.5 px-4 rounded-sm bg-neutral-900 text-white action-contact-trigger flex items-center justify-center gap-2 hover:bg-[#006fe3] transition-colors"
                     >
                       <Phone size={13} className="shrink-0" />
                       Call Now

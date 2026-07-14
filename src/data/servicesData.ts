@@ -7,7 +7,13 @@ import {
   ShieldCheck, 
   Bug, 
   Key, 
-  Factory 
+  Factory,
+  Bath,
+  Sparkles,
+  Shirt,
+  BedDouble,
+  Baby,
+  Wrench
 } from "lucide-react";
 
 export interface FAQItem {
@@ -33,14 +39,14 @@ export interface ServiceItem {
 export const servicesData: ServiceItem[] = [
   {
     id: "home-deep-cleaning",
-    title: "Home Deep Cleaning — Pune",
+    title: "Home Deep Cleaning",
     tag: "Full-House Care",
-    desc: "A complete top-to-bottom cleaning of your home. We go beyond dusting and mopping — tackling kitchen grease, bathroom grime, furniture dust, fan blades, window tracks, and every corner your regular cleaning routine cannot reach.",
+    desc: "A clean home brings comfort and peace of mind. We deep clean every corner of your house, removing dust, stains, and hidden dirt that regular cleaning often misses. We treat your home with the same care and attention as if it were our own.",
     img: "/gallery/Deep_Cleaning.avif",
     icon: Home,
-    metaTitle: "Home Deep Cleaning Services in Pune | Professional Home Cleaning",
-    metaDesc: "Looking for reliable home deep cleaning in Pune? Our trained professionals deliver thorough, top-to-bottom cleaning for homes across Pune. Book a free quote today.",
-    extendedDesc: "Regular cleaning keeps your home looking tidy. But over time, dust settles in places no mop reaches. Grease builds up behind appliances. Bathroom grout darkens. Ceiling fans become invisible dust traps. And the accumulated grime starts to affect the air you breathe and the way your home feels. Our home deep cleaning service in Pune is designed to fix that — thoroughly, systematically, and with the kind of attention to detail that leaves your home feeling genuinely refreshed.",
+    metaTitle: "Home Deep Cleaning Services | Professional Home Cleaning",
+    metaDesc: "Looking for reliable home deep cleaning? Our trained professionals deliver thorough, top-to-bottom cleaning for homes across Pune, Mumbai, Bangalore, and Hyderabad. Book a free quote today.",
+    extendedDesc: "Regular cleaning keeps your home looking tidy. But over time, dust settles in places no mop reaches. Grease builds up behind appliances. Bathroom grout darkens. Ceiling fans become invisible dust traps. And the accumulated grime starts to affect the air you breathe and the way your home feels. Our home deep cleaning service is designed to fix that — thoroughly, systematically, and with the kind of attention to detail that leaves your home feeling genuinely refreshed.",
     features: [
       "Living Room & Bedrooms: Fans, light fixtures, walls, switches, skirting boards, interior windows, furniture surfaces, and floor deep clean.",
       "Kitchen: Exterior chimney surfaces, tiles, countertops, sink, cabinet exteriors, appliance surfaces, and hidden corner pockets.",
@@ -75,15 +81,76 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
-    id: "kitchen-deep-cleaning",
-    title: "Kitchen Deep Cleaning — Pune",
+    id: "office-cleaning-services",
+    title: "Office Cleaning",
+    tag: "Corporate Workspace",
+    desc: "A clean workplace creates a better environment for both employees and visitors. We thoroughly clean workstations, meeting rooms, common areas, and washrooms so your office always feels fresh, organized, and professional.",
+    img: "/gallery/Corporate_Office.avif",
+    icon: Building2,
+    metaTitle: "Office Cleaning Services | Professional Office Deep Cleaning",
+    metaDesc: "Professional office cleaning services. We deep clean workstations, cabins, meeting rooms, and washrooms. Reliable, flexible, and ISO-certified. Get a free quote.",
+    extendedDesc: "The state of your office says a great deal about your business — to clients, to visitors, and to your own team. A clean, well-maintained workspace improves employee wellbeing, reduces sick days, and creates an environment where people can focus and do their best work. Our professional office cleaning service delivers thorough, reliable cleaning for workplaces of all sizes — from startups and coworking spaces to large corporate offices and commercial facilities.",
+    features: [
+      "Workstations & Desks: Microfabric sanitation of primary table tops, monitor casings, keyboards, and task chairs.",
+      "Cabins & Meeting Rooms: Complete glass partition polishing, surface dusting, and deep hard floor maintenance.",
+      "Common Areas & Lobbies: Detailing of primary reception bays, main entrance seating arrays, and high-touch corridor walls.",
+      "Pantry & Cafeteria: Sanitization of food preparation surfaces, exterior appliance shells, utility sinks, and floors.",
+      "Washrooms: Absolute deep cleaning, fixture chemical descaling, and continuous biological disinfection routines."
+    ],
+    processSteps: [
+      "Flexible Scheduling Realignment: Operational deployment is arranged during off-peak hours (early morning, evening, or weekends) to ensure zero business disruption.",
+      "Zonal Cleaning Deployment: Our professional team splits into assigned task groups across workstations, public lobbies, and utility zones.",
+      "Industrial Dust Extraction: Commercial backpack HEPA vacuums sweep through open floor plates and fabric seating arrays.",
+      "High-Touch Point Disinfection: Thorough sanitization tracking across all internal entry points, door handles, and public railings."
+    ],
+    faqs: [
+      {
+        question: "What facility variations do you systematically support?",
+        answer: "We offer tailored cleaning services for corporate office complexes, co-working spaces, private clinics, educational institutions, commercial fulfillment centers, and high-end retail venues."
+      }
+    ]
+  },
+  {
+    id: "bathroom-cleaning",
+    title: "Bathroom Cleaning",
     tag: "Hygiene Standard",
-    desc: "Your kitchen works hard every day — and the grease, oil, and food residue builds up faster than you would think. We deep clean chimneys, tiles, countertops, cabinets, appliances, and sinks to leave your kitchen spotless and hygienic.",
+    desc: "Bathrooms need extra care to stay hygienic. We remove soap stains, hard water marks, and built-up dirt while cleaning every fitting and corner, leaving your bathroom fresh, clean, and pleasant to use.",
+    img: "/gallery/Healthcare.avif",
+    icon: Bath,
+    metaTitle: "Bathroom Deep Cleaning Services | Stain & Scale Removal",
+    metaDesc: "Professional bathroom cleaning. We remove stubborn soap scum, hard water stains, and bacteria to leave your bathroom sparkling clean and fresh.",
+    extendedDesc: "Bathrooms need more than a quick wipe and a spray. Hard water stains build up on taps and showerheads. Soap scum settles on tiles and glass. Grout lines darken with mould. Exhaust fans clog with dust. And behind the visible grime lies bacteria that regular cleaning simply does not eliminate. Our professional bathroom cleaning service delivers a thorough, deep clean that leaves your bathroom visually spotless — and genuinely hygienic.",
+    features: [
+      "Toilet Structure: Disinfection and structural scrubbing of the bowl, seat, lid, external housing, and structural floor base.",
+      "Tiles & Glass Walls: Full mechanical scrub down, vertical grout line cleaning, and complete environmental mould removal.",
+      "Washbasin & Vanity Mirrors: Complete descaling, surface scrubbing, and streak-free mirror glass polishing.",
+      "Shower & Bathtubs: Detailed descaling of shower trays, geometric glass partitions, and perimeter framing tracks.",
+      "Taps & Metallic Fittings: Total elimination of stubborn mineral hard water stains, leaving chrome fixtures gleaming.",
+      "Exhaust Fan Assemblies: Exterior casing clean down and immediate loose dust extraction from extraction grilles."
+    ],
+    processSteps: [
+      "Initial Evaluation: Identification of specific mineral deposit tiers and surface chemical tolerances.",
+      "Targeted Descaling: Application of professional descaling formulations to dissolve built-up calcium and hard water deposits.",
+      "Mechanical Agitation: Focused scrubbing of tile faces, tracking parameters, and glass boundaries.",
+      "Sanitizing Flush: Disinfection rinse across all major fixtures to establish code-compliant hygiene baselines."
+    ],
+    faqs: [
+      {
+        question: "Why does professional bathroom cleaning make a distinct difference?",
+        answer: "Hard water causes stubborn mineral deposits that standard household consumer products simply cannot remove effectively. Our team deploys professional industrial descalers that break down years of scaling smoothly."
+      }
+    ]
+  },
+  {
+    id: "kitchen-deep-cleaning",
+    title: "Kitchen Cleaning",
+    tag: "Grease Removal",
+    desc: "The kitchen is where families come together, so it deserves special attention. We remove grease, oil, food residue, and hidden dirt from cabinets, tiles, countertops, chimneys, and sinks, making your kitchen clean and ready for everyday cooking.",
     img: "/gallery/Hotel.avif",
     icon: CookingPot,
-    metaTitle: "Kitchen Deep Cleaning Services in Pune | Grease & Grime Removal",
-    metaDesc: "Professional kitchen deep cleaning in Pune. We remove grease, oil buildup, and hidden grime from chimneys, tiles, countertops, and more. Book your free quote.",
-    extendedDesc: "The kitchen is where your family's meals are prepared — which makes it one of the most important spaces in your home to keep truly clean. But it is also one of the hardest to clean properly. Grease settles on surfaces invisibly. Oil accumulates inside chimneys. Food residue hides in tile grout and cabinet corners. Sinks develop limescale. And the longer it sits, the harder it gets to remove. Our kitchen deep cleaning service in Pune tackles all of it — using the right tools, the right products, and the patience it actually takes to do the job properly.",
+    metaTitle: "Kitchen Deep Cleaning Services | Grease & Grime Removal",
+    metaDesc: "Professional kitchen deep cleaning. We remove grease, oil buildup, and hidden grime from chimneys, tiles, countertops, and more. Book your free quote.",
+    extendedDesc: "The kitchen is where your family's meals are prepared — which makes it one of the most important spaces in your home to keep truly clean. But it is also one of the hardest to clean properly. Grease settles on surfaces invisibly. Oil accumulates inside chimneys. Food residue hides in tile grout and cabinet corners. Sinks develop limescale. And the longer it sits, the harder it gets to remove. Our kitchen deep cleaning service tackles all of it — using the right tools, the right products, and the patience it actually takes to do the job properly.",
     features: [
       "Chimney / Exhaust Hood: Exhaustive detailing of exterior surfaces, external filters, and localized grease trap deposits.",
       "Kitchen Tiles: Heavy manual scrub down and degreasing of wall surfaces, structural backsplashes, and horizontal grout lines.",
@@ -107,52 +174,21 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
-    id: "facade-glass-cleaning",
-    title: "Facade & Glass Cleaning — Pune",
-    tag: "High-Rise Specialist",
-    desc: "High-rise structural facade and exterior glass cleaning executed using modern safety tools, expert scaffolding frameworks, and rigorous safety checkpoints to ensure an immaculate, streak-free architectural finish.",
-    img: "/gallery/Facade.avif",
-    icon: Layers,
-    metaTitle: "Bathroom Cleaning Services in Pune | Deep Bathroom Cleaning Experts",
-    metaDesc: "Professional bathroom cleaning in Pune. We remove soap scum, hard water stains, and bacteria to leave your bathroom sparkling. Reliable, hygienic, and affordable.",
-    extendedDesc: "Bathrooms need more than a quick wipe and a spray. Hard water stains build up on taps and showerheads. Soap scum settles on tiles and glass. Grout lines darken with mould. Exhaust fans clog with dust. And behind the visible grime lies bacteria that regular cleaning simply does not eliminate. Our professional bathroom cleaning service in Pune delivers a thorough, deep clean that leaves your bathroom visually spotless — and genuinely hygienic.",
-    features: [
-      "Toilet Structure: Disinfection and structural scrubbing of the bowl, seat, lid, external housing, and structural floor base.",
-      "Tiles & Glass Walls: Full mechanical scrub down, vertical grout line cleaning, and complete environmental mould removal.",
-      "Washbasin & Vanity Mirrors: Complete descaling, surface scrubbing, and streak-free mirror glass polishing.",
-      "Shower & Bathtubs: Detailed descaling of shower trays, geometric glass partitions, and perimeter framing tracks.",
-      "Taps & Metallic Fittings: Total elimination of stubborn mineral hard water stains, leaving chrome fixtures gleaming.",
-      "Exhaust Fan Assemblies: Exterior casing clean down and immediate loose dust extraction from extraction grilles."
-    ],
-    processSteps: [
-      "Initial Evaluation: Identification of specific mineral deposit tiers and surface chemical tolerances.",
-      "Targeted Descaling: Application of professional descaling formulations to dissolve built-up calcium and hard water deposits.",
-      "Mechanical Agitation: Focused scrubbing of tile faces, tracking parameters, and glass boundaries.",
-      "Sanitizing Flush: Disinfection rinse across all major fixtures to establish code-compliant hygiene baselines."
-    ],
-    faqs: [
-      {
-        question: "Why does professional bathroom cleaning make a distinct difference?",
-        answer: "Hard water across the Pune region causes stubborn mineral deposits that standard household consumer products simply cannot remove effectively. Our team deploys professional industrial descalers that break down years of scaling smoothly."
-      }
-    ]
-  },
-  {
     id: "sofa-upholstery-cleaning",
-    title: "Sofa & Upholstery Cleaning — Pune",
+    title: "Sofa & Chair Cleaning + Shampooing",
     tag: "Fabric Care",
-    desc: "Sofas, chairs, mattresses, and curtains collect dust, allergens, and stains over time. We use professional shampooing and, where needed, steam cleaning to restore the freshness of your upholstery without damaging the fabric.",
+    desc: "Your furniture collects dust, stains, and germs over time. We gently shampoo sofas and chairs to restore their freshness. If we find deep stains or stubborn dirt, we use steam cleaning whenever required to achieve better results without harming the fabric.",
     img: "/gallery/Upholstery.avif",
     icon: Sofa,
-    metaTitle: "Sofa Cleaning Pune | Professional Sofa & Upholstery Cleaning",
-    metaDesc: "Expert sofa and upholstery cleaning in Pune. We remove dust, stains, and allergens from sofas, chairs, mattresses, and curtains. Book your sofa cleaning today.",
-    extendedDesc: "That comfortable sofa you come home to every evening? Over time, it accumulates dust, skin particles, pet dander, food crumbs, and bacteria deep inside its fabric — far beyond what vacuuming can reach. And the stains that seem set in? Most can be significantly improved with the right technique. Our professional sofa and upholstery cleaning service in Pune uses specialised shampooing and, where required, steam cleaning to restore your furniture — gently and effectively.",
+    metaTitle: "Sofa & Chair Cleaning + Shampooing | Professional Fabric Care",
+    metaDesc: "Expert sofa and chair cleaning. We gently shampoo and steam clean upholstery to remove dust, germs, and stubborn stains without damaging fabrics.",
+    extendedDesc: "That comfortable sofa you come home to every evening? Over time, it accumulates dust, skin particles, pet dander, food crumbs, and bacteria deep inside its fabric — far beyond what vacuuming can reach. And the stains that seem set in? Most can be significantly improved with the right technique. Our professional sofa and upholstery cleaning service uses specialised shampooing and, where required, steam cleaning to restore your furniture — gently and effectively.",
     features: [
       "Sofas & Sectionals: High-end detailing for all structural fabric profiles and dimensional layouts.",
       "Chairs & Armchairs: Complete stain extraction across dining seats, custom accent chairs, and fabric office fittings.",
-      "Mattress Sterilization: Deep sub-surface extraction, organic stain neutralisation, and mite elimination.",
-      "Curtain Maintenance: Advanced shampooing loops and steam refresh processes to eliminate atmospheric dust.",
-      "Carpets & Fine Area Rugs: High-lift injection extraction cleaning paired with localized steam treatment configurations."
+      "Gentle Shampooing: Industrial-grade foam formulas lift dirt without saturating deep upholstery foam layers.",
+      "Steam Treatment: High-temperature steam applications deployed on stubborn biological marks and deep grease spots.",
+      "Odour Neutralization: Eliminates trapped pet scents, smoke odors, and atmospheric mustiness."
     ],
     processSteps: [
       "Inspection & Pre-Treatment: We assess the unique fabric weave, identify set-in stains, and apply precise target pre-treatment agents.",
@@ -168,95 +204,253 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
-    id: "office-cleaning-services",
-    title: "Office Cleaning Services — Pune",
-    tag: "Corporate Workspace",
-    desc: "A clean office is not just about appearance — it affects productivity, employee wellbeing, and the impression you make on clients. We clean workstations, cabins, meeting rooms, common areas, pantries, and washrooms to a professional standard.",
-    img: "/gallery/Corporate_Office.avif",
-    icon: Building2,
-    metaTitle: "Office Cleaning Services in Pune | Professional Office Deep Cleaning",
-    metaDesc: "Professional office cleaning services in Pune. We deep clean workstations, cabins, meeting rooms, and washrooms. Reliable, flexible, and ISO-certified. Get a free quote.",
-    extendedDesc: "The state of your office says a great deal about your business — to clients, to visitors, and to your own team. A clean, well-maintained workspace improves employee wellbeing, reduces sick days, and creates an environment where people can focus and do their best work. Our professional office cleaning service in Pune delivers thorough, reliable cleaning for workplaces of all sizes — from startups and coworking spaces to large corporate offices and commercial facilities.",
+    id: "carpet-cleaning",
+    title: "Carpet Cleaning + Shampooing",
+    tag: "Deep Extraction",
+    desc: "Carpets trap dust, allergens, and dirt deep inside the fibers. We shampoo the carpet thoroughly, and when extra cleaning is needed, we use steam cleaning to lift stubborn dirt and bring back a fresh, clean look.",
+    img: "/gallery/Deep_Cleaning.avif",
+    icon: Sparkles,
+    metaTitle: "Carpet Cleaning & Shampooing Services | Steam Extraction",
+    metaDesc: "Professional carpet shampooing and steam cleaning. We remove deep-seated dust, allergens, and tough stains to bring back a fresh, clean look.",
+    extendedDesc: "Carpets act like giant environmental filters in homes and offices, steadily trapping dust, pollen, bacteria, and grit inside their weave. Vacuuming only clears the very top layer, leaving abrasive particles below to grind against fibers and dull the appearance over time. Our specialized carpet shampooing and steam extraction service penetrates deep into the pile, flushing out trapped pollutants and restoring plush texture.",
     features: [
-      "Workstations & Desks: Microfabric sanitation of primary table tops, monitor casings, keyboards, and task chairs.",
-      "Cabins & Meeting Rooms: Complete glass partition polishing, surface dusting, and deep hard floor maintenance.",
-      "Common Areas & Lobbies: Detailing of primary reception bays, main entrance seating arrays, and high-touch corridor walls.",
-      "Pantry & Cafeteria: Sanitization of food preparation surfaces, exterior appliance shells, utility sinks, and floors.",
-      "Washrooms: Absolute deep cleaning, fixture chemical descaling, and continuous biological disinfection routines."
+      "Deep Fiber Shampooing: Low-moisture foam agitation that loosens deeply embedded soil and grit.",
+      "Steam Sanitization: Thermally kills dust mites, bacteria, and allergens hidden deep within carpet padding.",
+      "High-Lift Vacuum Extraction: Commercial suction machines remove dirty water, cleaning residue, and moisture immediately.",
+      "Stain Remediation: Special spotting treatments for coffee spills, ink, pet accidents, and heavy foot-traffic paths.",
+      "Pile Lifting: Mechanical brushing revives matted down fibers for a renewed, soft underfoot feel."
     ],
     processSteps: [
-      "Flexible Scheduling Realignment: Operational deployment is arranged during off-peak hours (early morning, evening, or weekends) to ensure zero business disruption.",
-      "Zonal Cleaning Deployment: Our professional team splits into assigned task groups across workstations, public lobbies, and utility zones.",
-      "Industrial Dust Extraction: Commercial backpack HEPA vacuums sweep through open floor plates and fabric seating arrays.",
-      "High-Touch Point Disinfection: Thorough sanitization tracking across all internal entry points, door handles, and public railings."
+      "Pre-Inspection: We identify pile types (wool, synthetic, nylon) and locate heavily soiled walkways and spots.",
+      "Dry Vacuum Extraction: Removing dry dust and grit prior to liquid application to prevent mudding.",
+      "Shampoo Agitation: Working commercial cleaning foam through the carpet fibers using rotary scrubbers.",
+      "Steam & Extract: High-pressure steam injection combined with rapid vacuum extraction lifts stains and residues.",
+      "Grooming & Drying: Fibers are aligned for uniform drying and aesthetic presentation."
     ],
     faqs: [
       {
-        question: "What facility variations do you systematically support across Pune?",
-        answer: "We offer tailored cleaning services for corporate office complexes, co-working spaces, private clinics, educational institutions, commercial fulfillment centers, and high-end retail venues."
+        question: "Can you remove all old stains from carpets?",
+        answer: "While our industrial extraction techniques remove over 90% of common stains, certain chemical dyes or permanent discolorations may only be lightened depending on how long they have set in the fibers."
       }
     ]
   },
   {
-    id: "sanitization-services",
-    title: "Sanitization Services — Pune",
-    tag: "Microbe Protection",
-    desc: "Going beyond cleaning, our sanitization service uses professional-grade disinfectants to eliminate harmful bacteria and viruses on high-touch surfaces — giving your home or workplace an extra layer of protection.",
+    id: "curtains-cleaning",
+    title: "Curtains Cleaning + Shampooing",
+    tag: "Fabric Care",
+    desc: "Curtains quietly collect dust every day. We carefully clean and shampoo them to remove dirt and odors. If required, steam cleaning is used to refresh the fabric while helping maintain its quality.",
+    img: "/gallery/Upholstery.avif",
+    icon: Shirt,
+    metaTitle: "Curtain Cleaning & Shampooing | Odor & Dust Removal",
+    metaDesc: "Expert curtain cleaning and shampooing. We gently eliminate accumulated dust, smoke, and odors while maintaining your fabric's quality and drape.",
+    extendedDesc: "Hanging drapery and curtains act as magnets for airborne dust, exhaust pollution, cooking smells, and general room odors. Taking them down for dry cleaning can be tedious and expensive. Our specialized on-site curtain cleaning and shampooing service gently extracts dust and refreshes heavy fabrics right where they hang, preserving delicate pleats and structural backing.",
+    features: [
+      "On-Site Dust Extraction: HEPA-filtered vacuuming removes surface dust without taking drapes down.",
+      "Gentle Fabric Shampooing: Delicate foam cleaning formulations preserve color vibrancy and prevent shrinkage.",
+      "Steam Refreshing: Safe thermal steaming relaxes wrinkles, eliminates musty odors, and kills surface bacteria.",
+      "Sheer & Heavy Drape Handling: Custom cleaning adjustments for everything from lightweight lace to heavy velvet.",
+      "Deodorization: Neutralizes stale cooking smells, cigarette smoke, and pet odors trapped in fabrics."
+    ],
+    processSteps: [
+      "Fabric Assessment: Checking care labels and testing dyes for colorfastness before treatment.",
+      "Dust Removal: High-efficiency vacuuming across pleats, headers, and hems to remove loose particulates.",
+      "Targeted Shampooing: Applying fabric-safe cleaning foam to soiled sections and handling marks.",
+      "Steam Extraction: Passing specialized drapery steam heads along panels to refresh and sanitize cleanly."
+    ],
+    faqs: [
+      {
+        question: "Do I need to take my curtains down before your team arrives?",
+        answer: "No. In most cases, our specialized equipment allows us to vacuum, shampoo, and steam clean curtains directly while they hang, saving you the hassle of re-draping."
+      }
+    ]
+  },
+  {
+    id: "mattress-cleaning",
+    title: "Bed & Mattress Cleaning + Shampooing",
+    tag: "Sleep Hygiene",
+    desc: "A clean mattress means healthier sleep. We remove dust, allergens, stains, and hidden dirt through deep cleaning and shampooing. Whenever needed, steam cleaning is used to provide an even deeper level of cleanliness.",
     img: "/gallery/Healthcare.avif",
-    icon: ShieldCheck,
-    metaTitle: "Sanitization Services in Pune | Home & Office Disinfection Experts",
-    metaDesc: "Professional sanitization and disinfection services for homes and businesses in Pune. Reduce bacteria, viruses, and germs on high-touch surfaces. Book today.",
-    extendedDesc: "A space that looks clean and a sanitised space are not the same thing. Harmful bacteria and viruses can survive on countertops, door handles, switches, and shared surfaces — completely invisible to the eye. Our professional sanitization service in Pune goes beyond appearance. Using hospital-grade, tested disinfectants, we treat high-touch surfaces and shared areas to create an environment that is not just visually clean — but genuinely safer for everyone in it.",
+    icon: BedDouble,
+    metaTitle: "Mattress Cleaning & Shampooing | Allergen & Mite Removal",
+    metaDesc: "Professional mattress deep cleaning. We eliminate dust mites, dead skin cells, stains, and allergens for a healthier, cleaner sleeping environment.",
+    extendedDesc: "We spend nearly a third of our lives in bed, yet mattresses are frequently neglected during regular house cleaning. Over years of use, mattresses absorb gallons of sweat and accumulate millions of dust mites feeding on shed skin cells. This internal buildup is a primary trigger for nighttime allergies, asthma, and poor sleep quality. Our deep mattress cleaning and shampooing service purges deep-seated allergens and sanitizes your sleeping surface thoroughly.",
     features: [
-      "Entry Points: High-intensity disinfection mapping across all internal/external door handles, knobs, and structural frames.",
-      "Electrical Switch Matrix: Safe dry-wipe chemical sterilization of light switches, panel plug points, and access keypads.",
-      "Horizontal Flat Workspaces: Hospital-grade chemical surface wipes across executive desks, countertops, and boardroom tables.",
-      "Public Railings & Lift Tiers: Rigorous scrub down of elevator control arrays, public handrails, and entry turnstiles."
+      "Allergen & Mite Extraction: Powerful sub-surface vacuuming pulls out dust mite colonies and dead skin debris.",
+      "Deep Foam Shampooing: Lifts organic body oil discoloration and surface stains safely.",
+      "High-Temperature Steam Sterilization: Thermal sanitization kills bacteria, fungal spores, and lingering odors.",
+      "Sanitizing Spray Application: Leaves behind an antimicrobial shield that retards future allergen growth.",
+      "Double-Sided Cleaning: Both top sleeping surfaces and structural side gussets are fully detailed."
     ],
     processSteps: [
-      "Pre-Clean Spatial Alignment: We strongly recommend scheduling a comprehensive Deep Clean before sanitization to clear layout layers.",
-      "Disinfectant Atomization: Deployment of professional atomizing mist systems to treat complex open spaces evenly.",
-      "Target Micro-Wiping: High-contact surface elements are addressed directly using specialized virucidal barrier solutions.",
-      "Ventilation Phase Clearance: The treated facility is monitored through a quick drying phase before opening for full access."
+      "Surface Industrial Vacuuming: High-power extraction of dry particulate matter across all seams and piping.",
+      "Stain Pre-Treatment: Enzymatic cleaners applied to protein-based stains, sweat marks, and spills.",
+      "Shampoo & Steam Agitation: Deep cleansing using foam scrubbers followed immediately by sterilizing steam passes.",
+      "Moisture Extraction: Rapid vacuum extraction removes liquid residue to ensure fast turnaround drying."
     ],
     faqs: [
       {
-        question: "How long does a standard sanitization service take to execute?",
-        answer: "Most residential layouts and mid-sized corporate offices are completed within 1 to 3 hours. We utilize fast-acting products that let you safely re-enter the treated space within 30 to 60 minutes post-application."
-      },
-      {
-        question: "How frequently should high-occupancy commercial properties be sanitised?",
-        answer: "High-traffic commercial real estate spaces benefit most from weekly or fortnightly sanitization plans. Residential spaces generally maintain safe limits with treatments every 1 to 3 months."
+        question: "How soon can I sleep on my mattress after cleaning?",
+        answer: "We recommend allowing 4 to 6 hours for complete air drying before remaking the bed with fresh linens. Good room ventilation accelerates this drying process noticeably."
       }
     ]
   },
   {
-    id: "pest-control",
-    title: "Pest Control — Pune",
-    tag: "Infestation Shield",
-    desc: "From cockroaches and termites to bed bugs and rodents, our expert pest control team uses safe, effective treatments to eliminate infestations and protect your property long-term.",
-    img: "/gallery/Pest-Control.avif",
-    icon: Bug,
-    metaTitle: "Pest Control Services in Pune | Safe & Effective Pest Treatment",
-    metaDesc: "Professional pest control in Pune for cockroaches, termites, bed bugs, rodents, and more. Safe treatments, long-lasting results. Book your inspection today.",
-    extendedDesc: "Pests are more than a nuisance. They contaminate food, damage property, spread disease, and compromise the health of anyone living or working in the space. And once an infestation takes hold, the longer you wait, the harder it becomes to resolve. Our professional pest control service in Pune combines thorough inspection, targeted treatment, and long-term prevention — to eliminate current infestations and significantly reduce the risk of future ones.",
+    id: "newborn-baby-cleaning",
+    title: "New Born Baby Home Cleaning",
+    tag: "Specialized Care",
+    desc: "A newborn deserves a clean and healthy home. We carefully clean every room, removing dust and germs from commonly touched surfaces to create a fresh and comfortable environment for your little one and your family.",
+    img: "/gallery/Deep_Cleaning.avif",
+    icon: Baby,
+    metaTitle: "Newborn Baby Home Cleaning Services | Baby-Safe Disinfection",
+    metaDesc: "Ensure a safe, germ-free home for your newborn. We use non-toxic, chemical-free, baby-safe cleaning and disinfection methods for total peace of mind.",
+    extendedDesc: "Bringing a newborn home is an extraordinary milestone, but a baby's developing immune system is highly sensitive to airborne dust, mold spores, pet dander, and harsh chemical residues left by typical household cleaners. Our Newborn Baby Home Cleaning service is specifically engineered around safety and purity. We sanitize every corner using eco-friendly, non-toxic, and fragrance-free solutions, giving you absolute peace of mind that your home is safe for your baby's first days.",
     features: [
-      "Cockroach Remediation: Application of advanced clear gel baits and residual spray barriers designed for all life stages.",
-      "Termite Structural Defense: Sub-slab chemical injections and localized wood-borer barrier treatments.",
-      "Bed Bug Eradication: Target thermal and chemical flushing loops across framing seams and fabric junctions.",
-      "Rodent Management: Installation of tamper-proof bait stations and structural entry-point mapping checks."
+      "100% Baby-Safe Products: Strict use of non-toxic, VOC-free, and hypoallergenic cleaning formulations.",
+      "Nursery Deep Detailing: Complete dust removal from crib rails, changing tables, feeding chairs, and toy storage zones.",
+      "High-Touch Sanitization: Thorough disinfection of door handles, light switches, floor mats, and remote controls.",
+      "HEPA Air-Filtering Vacuuming: Traps microscopic dust and pet dander rather than recirculating them into room air.",
+      "Zero Chemical Residue: Double-rinsing protocols ensure no irritating residues remain on floors where babies will crawl."
     ],
     processSteps: [
-      "Rigorous Site Inspection: A comprehensive structural walkthrough to discover active biological nesting grounds and primary entry tracks.",
-      "Assessment & Planning: We review our field findings with you, detail the exact chemical configurations, and coordinate safety measures.",
-      "Targeted Mitigation Delivery: Precision application of approved, industry-standard treatments using advanced spraying hardware.",
-      "Environmental Exclusion Advice: We outline exact sealing parameters and food storage habits to reduce future pest attraction risks."
+      "Consultation & Scope Review: Aligning on specific sensitivity requirements or areas needing extra attention.",
+      "Dry Particulate Extraction: HEPA vacuuming floors, upholstery, curtains, and air vent grates.",
+      "Eco-Friendly Scrub down: Washing surfaces using plant-based and baby-safe sanitizing agents.",
+      "Final Purity Verification: Walkthrough ensuring the environment is completely fresh, odorless, and spotless."
     ],
     faqs: [
       {
-        question: "Should a deep cleaning section follow a pest control treatment?",
-        answer: "Yes, absolutely. We strongly advise scheduling a comprehensive deep clean 48 to 72 hours post pest treatment. This safely extracts dead insects, organic pest residues, and chemical traits, leaving your space perfectly hygienic."
+        question: "Are your disinfectants safe if my baby touches the floor or furniture?",
+        answer: "Yes, absolutely. We use certified food-grade and pediatric-safe sanitizers that break down into harmless elements, ensuring zero toxic risks when babies touch surfaces or put their hands in their mouths."
+      }
+    ]
+  },
+  {
+    id: "before-possession-cleaning",
+    title: "Before Possession Cleaning",
+    tag: "Move-In Ready",
+    desc: "Moving into a new home or office should feel exciting, not stressful. We remove construction dust, paint marks, and leftover debris, making the space clean, welcoming, and ready for you from day one.",
+    img: "/gallery/Before_Possession.avif",
+    icon: Key,
+    metaTitle: "Before Possession Cleaning | Move-In & Post-Construction",
+    metaDesc: "Professional pre-possession and move-in cleaning. We remove construction dust, paint splatters, and cement residue so your property is ready from day one.",
+    extendedDesc: "Newly constructed or renovated properties look impressive, but they are invariably covered in a fine layer of construction dust, plaster residue, paint splatters, and cement drops on tiles and windows. Trying to move furniture into an uncleaned site traps abrasive silica dust into your belongings forever. Our Before Possession Cleaning service bridges the gap between construction completion and move-in day, delivering an exhaustive deep clean that transforms a building site into an immaculate living or working space.",
+    features: [
+      "Paint & Cement Splatter Removal: Safe scraping and chemical softening of stubborn contractor residue on glass and floors.",
+      "Fine Dust Eradication: Deep vacuuming of hidden woodwork recesses, wardrobe tracks, switchboards, and ceiling fixtures.",
+      "Window & Track Detailing: Complete removal of protective stickers, silicone smudges, and plaster from sliding tracks.",
+      "Deep Floor Scrubbing: Industrial rotary scrubbing machines clean porcelain, vitrified tiles, marble, or wooden flooring.",
+      "Cabinet & Wardrobe Interiors: Thorough wiping and sanitization of every shelf, drawer, and hinge before you unpack."
+    ],
+    processSteps: [
+      "Debris Clearance: Removing remaining contractor scraps, packaging clips, and larger loose debris.",
+      "Dry Dust Extraction: HEPA vacuuming walls, ceilings, electrical fittings, and joinery interiors.",
+      "Residue Scraping & Descaling: Special treatments applied to dissolve paint drips, cement haze, and adhesive marks.",
+      "Wet Scrubbing & Sanitizing: Complete washdown of bathrooms, kitchens, and floors for a sparkling move-in finish."
+    ],
+    faqs: [
+      {
+        question: "When should I schedule before possession cleaning?",
+        answer: "We strongly recommend scheduling cleaning 24 to 48 hours after all construction, carpentry, and painting work is 100% complete, but immediately before your movers arrive with furniture."
+      }
+    ]
+  },
+  {
+    id: "industrial-shed-cleaning",
+    title: "Industrial / Industrial Shed Cleaning",
+    tag: "Heavy Duty",
+    desc: "Industrial areas often collect heavy dust, grease, and stubborn dirt. We clean floors, walls, machinery surroundings, and work areas thoroughly. For sticky dirt or hard-to-remove deposits, we use a jet pressure machine whenever required for a deeper and more effective clean.",
+    img: "/gallery/Industrial_Cleaning.avif",
+    icon: Factory,
+    metaTitle: "Industrial Shed Cleaning Services | Factory & Warehouse Cleaning",
+    metaDesc: "Heavy-duty industrial shed and factory cleaning. High-pressure jet washing, degreasing, and structural cleaning for warehouses and manufacturing plants.",
+    extendedDesc: "Industrial sheds, manufacturing plants, and warehouses accumulate severe operational grime — ranging from carbon soot and chemical mists to heavy machine grease and high-ceiling dust webs. Unmaintained facilities face safety hazards, equipment overheating, and compliance failures. Our industrial shed cleaning service brings heavy-duty equipment and specialized industrial degreasers to tackle rugged working environments without disrupting your core operational productivity.",
+    features: [
+      "High-Pressure Jet Washing: 200+ bar pressure cleaning blasts away thick grease, mud, and tire marks from shop floors.",
+      "Truss & High-Ceiling Dusting: Removal of hazardous dust buildup on overhead beams, skylights, and utility piping.",
+      "Heavy Degreasing: Industrial chemical breakdown of stubborn lubricant spills around machinery footprints.",
+      "Wall & Cladding Washing: Restoring interior and exterior metal shed walls corrupted by industrial exhaust.",
+      "Floor Scrubbing & Buffing: Ride-on auto scrubbers clean expansive concrete or epoxy floor areas rapidly."
+    ],
+    processSteps: [
+      "Safety & Risk Assessment: Coordinating with facility managers to lock out hazardous zones and protect sensitive electronics.",
+      "Overhead Cleaning: Clearing dust from high rafters, crane rails, and lighting fixtures first.",
+      "Degreasing Application: Applying heavy-duty alkaline degreasers to oil-saturated flooring and structural bases.",
+      "Pressure Washing & Scrubbing: Executing high-pressure washdowns and mechanical floor scrubbing for a restored finish."
+    ],
+    faqs: [
+      {
+        question: "Can you clean our factory during weekend shutdown hours?",
+        answer: "Yes. We regularly schedule industrial cleaning operations during night shifts, weekends, or annual plant maintenance shutdowns to ensure zero interference with your production targets."
+      }
+    ]
+  },
+  {
+    id: "facade-glass-cleaning",
+    title: "Facade / High-Rise Glass Cleaning",
+    tag: "High-Rise Specialist",
+    desc: "The outside of your building creates the first impression. Our trained team carefully cleans glass facades and exterior surfaces, removing dust, water marks, and pollution stains to restore a bright, professional appearance.",
+    img: "/gallery/Facade.avif",
+    icon: Layers,
+    metaTitle: "Facade & Glass Cleaning Services | Exterior Cleaning Experts",
+    metaDesc: "Professional facade and glass cleaning. We remove environmental grime, hard water stains, and structural dust to leave your exterior sparkling. Reliable and safe.",
+    extendedDesc: "Exterior building facades and glass panels need specialized care to maintain their architectural appeal. Weathering, pollution, and hard water stains build up on glass and structural panels over time. Our professional facade and glass cleaning service delivers a thorough, streak-free exterior clean using high-safety standards, scaffolding, and modern access equipment.",
+    features: [
+      "Exterior Glass Panels: Complete descaling, surface scrubbing, and streak-free glass polishing using industrial squeegee frameworks.",
+      "Structural Facades: Full mechanical scrub down and pressure washing of ACP sheets, stone cladding, and exterior wall boundaries.",
+      "Window Frames & Tracks: Detailed cleaning of aluminum profiles, structural gaskets, and drainage channels.",
+      "High-Access Safety: Rigorous deployment of certified rope access technicians, scaffolding systems, and boom lifts.",
+      "Stain & Scale Removal: Total elimination of stubborn atmospheric deposits, bird droppings, and mineral hard water scaling."
+    ],
+    processSteps: [
+      "Site Evaluation & Safety Planning: Comprehensive assessment of structural height, access points, and chemical tolerances.",
+      "Targeted Application: Application of eco-friendly, professional cleaning solutions to dissolve atmospheric buildup.",
+      "Mechanical Agitation & Washing: Focused scrubbing and controlled pressure washing of facade materials and glass boundaries.",
+      "Streak-Free Finishing: Pure water rinsing and squeegee drying to guarantee a flawless exterior finish."
+    ],
+    faqs: [
+      {
+        question: "Why does professional facade cleaning make a distinct difference?",
+        answer: "Environmental pollution and seasonal weather cause stubborn exterior buildup that degrades building aesthetics. Our certified high-access teams safely restore structural brilliance."
+      }
+    ]
+  },
+  {
+    id: "industrial-crane-cleaning",
+    title: "Industrial Crane Cleaning",
+    tag: "Equipment Care",
+    desc: "Industrial cranes are exposed to grease, oil, and heavy dust every day. We carefully clean accessible surfaces to remove built-up dirt and improve their appearance. Suitable cleaning methods are used whenever required for the best results.",
+    img: "/gallery/Building_Premises.avif",
+    icon: Wrench,
+    metaTitle: "Industrial Crane Cleaning Services | Heavy Equipment Degreasing",
+    metaDesc: "Professional industrial crane cleaning and degreasing. We remove heavy grease, oil, and built-up grime from overhead cranes and structural frameworks.",
+    extendedDesc: "Overhead bridge cranes, gantry cranes, and heavy lifting hoists operate in the dirtiest upper strata of manufacturing plants. Over time, thick layers of airborne manufacturing dust mix with mechanical lubricants, creating an abrasive sludge on crane walkways, control boxes, and structural girders. This buildup obscures safety inspection markings and poses severe fire risks. Our industrial crane cleaning service safely removes stubborn grease and debris from lifting infrastructure.",
+    features: [
+      "Structural Girder Degreasing: Removing heavy oil and carbon accumulation along primary bridge beams and runways.",
+      "Walkway & Handrail Cleaning: Clearing slippery grease from maintenance walkways to ensure operator safety.",
+      "Control Housing Exterior Wiping: Detailed dry and damp wiping around electrical enclosures and hoist motors.",
+      "Safety Signage Restoration: Careful cleaning around capacity labels, warning stripes, and inspection tags.",
+      "Custom Access Deployment: Using scissor lifts, articulated booms, or certified safety harnesses for elevated access."
+    ],
+    processSteps: [
+      "Lockout / Tagout Alignment: Strict compliance with electrical and mechanical isolation safety protocols before work begins.",
+      "Scraping & Sludge Removal: Manual removal of heavy grease cakes and industrial debris from structural channels.",
+      "Chemical Solvent Degreasing: Applying specialized industrial solvents that dissolve heavy lubricants safely.",
+      "Controlled Wipe-Down: High-absorbency wiping ensuring no dripping chemicals contaminate machinery on the shop floor below."
+    ],
+    faqs: [
+      {
+        question: "What safety standards do your crane cleaning technicians follow?",
+        answer: "All technicians assigned to overhead crane cleaning are certified in Working at Heights (WAH), equipped with industrial PPE and full-body harnesses, and strictly follow Lockout/Tagout (LOTO) safety procedures."
       }
     ]
   }
 ];
+
+/**
+ * Helper function to retrieve all service data.
+ * You can still pass a location string here if needed by other SEO components,
+ * but all default displayed titles are now 100% clean without placeholders.
+ */
+export function getServicesByLocation(location: string = "Pune"): ServiceItem[] {
+  return servicesData;
+}

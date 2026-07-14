@@ -4,7 +4,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import ContactForm from "./ContactForm";
 
-export default function ContactModal({ isOpen, onClose, action, pending, state }: any) {
+interface ContactModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  action: any;
+  pending: boolean;
+  state: any;
+  defaultLocation?: string; // Optional prop to pre-select Pune, Mumbai, Bangalore, or Hyderabad
+}
+
+export default function ContactModal({ 
+  isOpen, 
+  onClose, 
+  action, 
+  pending, 
+  state,
+  defaultLocation = "" 
+}: ContactModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -30,13 +46,21 @@ export default function ContactModal({ isOpen, onClose, action, pending, state }
               
               {/* Positioned inside the container at the top right */}
               <button 
+                type="button"
                 onClick={onClose}
                 className="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full transition-colors z-50 cursor-pointer"
+                aria-label="Close modal"
               >
                 <X size={20} />
               </button>
               
-              <ContactForm action={action} pending={pending} state={state} />
+              {/* Passes down the default location if specified */}
+              <ContactForm 
+                action={action} 
+                pending={pending} 
+                state={state} 
+                defaultLocation={defaultLocation} 
+              />
             </div>
           </motion.div>
         </>

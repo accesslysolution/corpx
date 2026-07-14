@@ -5,21 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Sparkles, ArrowUpRight } from "lucide-react";
+// 1. Import centralized data helper
+import { getServicesByLocation, ServiceItem } from "@/data/servicesData";
 import "./ServicesSlider.css";
 
-const services = [
-  { id: 0, title: "Home Deep Cleaning", href: "/services/home-deep-cleaning", img: "/gallery/Deep_Cleaning.avif" },
-  { id: 1, title: "Kitchen Deep Cleaning", href: "/services/kitchen-deep-cleaning", img: "/gallery/Hotel.avif" },
-  { id: 2, title: "Carpet Cleaning", href: "/services/bathroom-cleaning", img: "/gallery/Carpet.avif" },
-  { id: 3, title: "Sofa & Upholstery Cleaning", href: "/services/sofa-upholstery-cleaning", img: "/gallery/Upholstery.avif" },
-  { id: 4, title: "Office Deep Cleaning", href: "/services/office-cleaning", img: "/gallery/Corporate_Office.avif" },
-  { id: 5, title: "Sanitization Services", href: "/services/sanitization", img: "/gallery/Healthcare.avif" },
-  { id: 6, title: "Pest Control Services", href: "/services/pest-control", img: "/gallery/Building_Premises.avif" },
-  { id: 7, title: "Pre & Post Possession Cleaning", href: "/services/pre-post-possession", img: "/gallery/Before_Possession.avif" },
-  { id: 8, title: "Industrial & Commercial Cleaning", href: "/services/industrial-commercial-cleaning", img: "/gallery/Industrial_Cleaning.avif" },
-];
-
 export default function ServicesSlider() {
+  // 2. Load all 13 services dynamically (defaults to Pune)
+  const services: ServiceItem[] = getServicesByLocation("Pune");
+
   const [activeIndex, setActiveIndex] = useState(2);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -52,7 +45,7 @@ export default function ServicesSlider() {
               Advanced Architectural Hygiene Showroom
             </div>
             <h2 className="font-heading font-extrabold text-neutral-900 text-3xl sm:text-4xl md:text-5xl leading-tight tracking-tight">
-              Professional Cleaning Services in Pune
+              Professional Cleaning Services in Pune, Mumbai, Bangalore & Hyderabad
             </h2>
             <p className="font-body text-sm sm:text-base text-neutral-600 font-medium max-w-xl leading-relaxed">
               Explore our spatial cleaning matrix. Click on any block or use the navigational targets below to bring a solution into 3D focus.
@@ -61,10 +54,10 @@ export default function ServicesSlider() {
 
           {/* Desktop Controls */}
           <div className="hidden md:flex items-center gap-3">
-            <button onClick={handlePrev} className={navBtnClass} aria-label="Previous Service">
+            <button type="button" onClick={handlePrev} className={navBtnClass} aria-label="Previous Service">
               <ChevronLeft size={22} strokeWidth={2.5} />
             </button>
-            <button onClick={handleNext} className={navBtnClass} aria-label="Next Service">
+            <button type="button" onClick={handleNext} className={navBtnClass} aria-label="Next Service">
               <ChevronRight size={22} strokeWidth={2.5} />
             </button>
           </div>
@@ -85,6 +78,9 @@ export default function ServicesSlider() {
 
               const isActive = index === activeIndex;
               
+              // Clean up title: Removes " — Pune" so it fits nicely and prominently on the card
+              const cleanTitle = service.title.split(" — ")[0];
+
               // Responsive spacing parameters to spread elements out across wide monitors
               const horizontalStep = isMobile ? 150 : 310; 
               const stackingStep = isMobile ? 35 : 55;
@@ -121,18 +117,23 @@ export default function ServicesSlider() {
                   <div className="relative w-full h-full rounded-xl overflow-hidden group">
                     <Image
                       src={service.img}
-                      alt={service.title}
+                      alt={cleanTitle}
                       fill
                       sizes="(max-w-md) 100vw"
                       className="object-cover transition-transform duration-700 select-none"
                       priority={isActive}
                     />
 
-                    <div className={`absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/10 to-transparent transition-opacity duration-300 ${isActive ? "opacity-85" : "opacity-60"}`} />
+                    {/* Slightly darkened gradient bottom to ensure pure white text contrast */}
+                    <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent transition-opacity duration-300 ${isActive ? "opacity-90" : "opacity-70"}`} />
 
-                    <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end space-y-4 text-white z-10">
-                      <h3 className="font-heading font-bold text-lg sm:text-xl md:text-2xl tracking-tight leading-tight">
-                        {service.title}
+                    <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end space-y-4 z-10">
+                      {/* Enforced explicit white color and drop-shadow for maximum visibility */}
+                      <h3 
+                        className="font-heading font-extrabold text-lg sm:text-xl md:text-2xl tracking-tight leading-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+                        style={{ color: "#FFFFFF" }}
+                      >
+                        {cleanTitle}
                       </h3>
 
                       {isActive && (
@@ -142,7 +143,7 @@ export default function ServicesSlider() {
                           transition={{ delay: 0.12 }}
                         >
                           <Link
-                            href={service.href}
+                            href={`/services/${service.id}`}
                             className="inline-flex items-center gap-1.5 text-xs font-bold font-body uppercase tracking-widest text-[#006fe3] bg-white px-5 py-3 rounded-xs w-fit shadow-md transition-all duration-300 hover:bg-[#006fe3] hover:text-white"
                           >
                             Explore Service
@@ -161,10 +162,10 @@ export default function ServicesSlider() {
 
         {/* Mobile Control Indicators */}
         <div className="flex md:hidden justify-center gap-4 mt-6">
-          <button onClick={handlePrev} className={navBtnClass + " w-10 h-10"}>
+          <button type="button" onClick={handlePrev} className={navBtnClass + " w-10 h-10"} aria-label="Previous Service">
             <ChevronLeft size={18} />
           </button>
-          <button onClick={handleNext} className={navBtnClass + " w-10 h-10"}>
+          <button type="button" onClick={handleNext} className={navBtnClass + " w-10 h-10"} aria-label="Next Service">
             <ChevronRight size={18} />
           </button>
         </div>

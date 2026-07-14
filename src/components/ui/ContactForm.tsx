@@ -2,12 +2,16 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Mail, Phone, Briefcase, MessageSquare, Send, CheckCircle2 } from "lucide-react";
+import { User, Mail, Phone, Briefcase, MessageSquare, Send, CheckCircle2, MapPin } from "lucide-react";
 
 const services = [
   "Deep Cleaning Solutions", "Residential Cleaning", "Industrial Cleaning",
   "Corporate Office Cleaning", "Facade & Glass Cleaning", "Carpet Cleaning",
   "Hotel & Kitchen Cleaning", "Construction Site Cleaning",
+];
+
+const locations = [
+  "Pune", "Mumbai", "Bangalore", "Hyderabad"
 ];
 
 const inputClass = "w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl pl-12 pr-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all placeholder:text-gray-400";
@@ -61,19 +65,38 @@ export default function ContactForm({ action, pending, state }: any) {
             <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Let's Connect</h2>
             <p className="text-gray-500 mb-8">Tell us about your requirements, and we'll reach out shortly.</p>
 
-            <div className="relative"><User className={iconClass} size={20} /><input name="full_name" required placeholder="Full Name" className={inputClass} /></div>
+            <div className="relative">
+              <User className={iconClass} size={20} />
+              <input name="full_name" required placeholder="Full Name" className={inputClass} />
+            </div>
             
             <div className="grid md:grid-cols-2 gap-5">
-              <div className="relative"><Mail className={iconClass} size={20} /><input name="email" type="email" required placeholder="Email Address" className={inputClass} /></div>
-              <div className="relative"><Phone className={iconClass} size={20} /><input name="phone" required placeholder="Phone Number" className={inputClass} /></div>
+              <div className="relative">
+                <Mail className={iconClass} size={20} />
+                <input name="email" type="email" required placeholder="Email Address" className={inputClass} />
+              </div>
+              <div className="relative">
+                <Phone className={iconClass} size={20} />
+                <input name="phone" required placeholder="Phone Number" className={inputClass} />
+              </div>
             </div>
 
-            <div className="relative">
-              <Briefcase className={iconClass} size={20} />
-              <select name="service" required className={`${inputClass} appearance-none cursor-pointer`}>
-                <option value="">Select a Service</option>
-                {services.map((s) => <option key={s} value={s}>{s}</option>)}
-              </select>
+            <div className="grid md:grid-cols-2 gap-5">
+              <div className="relative">
+                <Briefcase className={iconClass} size={20} />
+                <select name="service" required className={`${inputClass} appearance-none cursor-pointer`}>
+                  <option value="">Select Service</option>
+                  {services.map((s) => <option key={s} value={s}>{s}</option>)}
+                </select>
+              </div>
+
+              <div className="relative">
+                <MapPin className={iconClass} size={20} />
+                <select name="location" required className={`${inputClass} appearance-none cursor-pointer`}>
+                  <option value="">Select Location</option>
+                  {locations.map((loc) => <option key={loc} value={loc}>{loc}</option>)}
+                </select>
+              </div>
             </div>
 
             <div className="relative">

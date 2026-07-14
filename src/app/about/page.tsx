@@ -47,7 +47,7 @@ const differences = [
   {
     id: 4,
     title: "Proven by Eight Years of Results",
-    description: "Since 2016, we have served hundreds of homes, offices, restaurants, clinics, and commercial spaces across Pune. Our reputation is not built on marketing — it is built on repeat clients and referrals.",
+    description: "Since 2016, we have served hundreds of homes, offices, restaurants, clinics, and commercial spaces across Pune, Mumbai, Bangalore & Hydrabad. Our reputation is not built on marketing — it is built on repeat clients and referrals.",
     icon: History,
     tag: "Historical Metric",
     bgClass: "bg-rose-50 border-rose-200/80 shadow-[0_4px_12px_-6px_rgba(244,63,94,0.06)]",
@@ -80,7 +80,7 @@ export default function AboutPage() {
             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
             className="font-heading font-extrabold text-neutral-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight"
           >
-            Pune&apos;s Trusted Cleaning Experts <br />
+           Trusted Cleaning Experts <br />
             <span className="text-[#006fe3] bg-gradient-to-r from-[#006fe3] to-[#005bc4] bg-clip-text text-transparent">
               — Cleaning With Care Since 2016
             </span>
@@ -123,7 +123,7 @@ export default function AboutPage() {
               It started with a straightforward belief: that every person deserves to live and work in a space that is genuinely clean — not just looked-over, but deeply, properly clean.
             </p>
             <p>
-              Since 2016, we have been turning that belief into reality for homes, offices, restaurants, clinics, and commercial properties across Pune. What began as a small, determined team has grown into one of Pune&apos;s most trusted professional cleaning services — built not on advertising promises, but on the results we deliver and the trust we earn, one clean space at a time.
+              Since 2016, we have been turning that belief into reality for homes, offices, restaurants, clinics, and commercial properties across Pune, Mumbai, Bangalore & Hydrabad. What began as a small, determined team has grown into one of most trusted professional cleaning services — built not on advertising promises, but on the results we deliver and the trust we earn, one clean space at a time.
             </p>
             
             {/* ISO Narrative Callout (Sky Blue Pastel Theme) */}
@@ -164,7 +164,7 @@ export default function AboutPage() {
               <span className="text-[9px] font-bold tracking-widest text-emerald-700 uppercase block">Strategic Goal</span>
               <h2 className="font-heading font-extrabold text-neutral-900 text-2xl tracking-tight">Our Mission</h2>
               <p className="font-body text-xs sm:text-sm text-neutral-600 font-medium leading-relaxed pt-2 border-t border-emerald-200/40">
-                To raise the standard of professional cleaning in Pune — delivering deep, thorough, and reliable cleaning services that genuinely improve the health, comfort, and appearance of every space we touch.
+                To raise the standard of professional cleaning in Pune, Mumbai, Bangalore & Hydrabad — delivering deep, thorough, and reliable cleaning services that genuinely improve the health, comfort, and appearance of every space we touch.
               </p>
             </div>
           </motion.div>
@@ -184,7 +184,7 @@ export default function AboutPage() {
               <span className="text-[9px] font-bold tracking-widest text-purple-700 uppercase block">Long-Term Target</span>
               <h2 className="font-heading font-extrabold text-neutral-900 text-2xl tracking-tight">Our Vision</h2>
               <p className="font-body text-xs sm:text-sm text-neutral-600 font-medium leading-relaxed pt-2 border-t border-purple-200/40">
-                To be the most trusted name in cleaning services across Pune — known not just for spotless spaces, but for the professionalism, reliability, and care we bring to every single job.
+                To be the most trusted name in cleaning services across Pune, Mumbai, Bangalore & Hydrabad — known not just for spotless spaces, but for the professionalism, reliability, and care we bring to every single job.
               </p>
             </div>
           </motion.div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const contactDetails = [
   {
@@ -25,12 +25,34 @@ const contactDetails = [
     color: "text-green-600",
     link: "https://wa.me/919595000022",
   },
+  // All 4 City Offices listed individually:
   {
     icon: MapPin,
-    title: "Office Location",
+    title: "Pune Office",
     value: "Katepuram Chowk, Sangavi, Pune",
     color: "text-rose-600",
     link: "https://maps.google.com/?q=Katepuram+Chowk,Sangavi,Pune",
+  },
+  {
+    icon: MapPin,
+    title: "Mumbai Office",
+    value: "Andheri West, Mumbai, Maharashtra",
+    color: "text-rose-600",
+    link: "https://maps.google.com/?q=Andheri+West,Mumbai",
+  },
+  {
+    icon: MapPin,
+    title: "Bangalore Office",
+    value: "Indiranagar, Bangalore, Karnataka",
+    color: "text-rose-600",
+    link: "https://maps.google.com/?q=Indiranagar,Bangalore",
+  },
+  {
+    icon: MapPin,
+    title: "Hyderabad Office",
+    value: "HITEC City, Hyderabad, Telangana",
+    color: "text-rose-600",
+    link: "https://maps.google.com/?q=HITEC+City,Hyderabad",
   },
 ];
 
@@ -41,8 +63,8 @@ export default function ContactInfo() {
         <motion.a
           key={index}
           href={item.link}
-          target={item.title === "Office Location" ? "_blank" : undefined}
-          rel={item.title === "Office Location" ? "noopener noreferrer" : undefined}
+          target={item.title.includes("Office") ? "_blank" : undefined}
+          rel={item.title.includes("Office") ? "noopener noreferrer" : undefined}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}

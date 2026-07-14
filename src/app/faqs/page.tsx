@@ -60,7 +60,7 @@ export default function FAQPage() {
         },
         {
           question: "What areas do you serve?",
-          answer: "We provide cleaning services across all major areas of Pune, including Hinjewadi, Baner, Wakad, Kothrud, Viman Nagar, Koregaon Park, Hadapsar, Wagholi, Aundh, Pimple Saudagar, and surrounding localities."
+          answer: "We provide cleaning services across all major areas of Pune, Mumbai, Bangalore & Hydrabad, including Hinjewadi, Baner, Wakad, Kothrud, Viman Nagar, Koregaon Park, Hadapsar, Wagholi, Aundh, Pimple Saudagar, and surrounding localities."
         },
         {
           question: "Do I need to prepare anything before the team arrives?",

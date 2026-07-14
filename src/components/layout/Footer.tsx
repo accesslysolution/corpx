@@ -39,7 +39,7 @@ export default function Footer() {
               Ready to experience the difference a truly clean space makes? Whether it's your home, office, or commercial property — we're here to help.
             </p>
             <h2 className="font-heading font-extrabold text-white text-2xl sm:text-3xl md:text-4xl tracking-tight leading-tight">
-              Book Your Professional Cleaning in Pune Today
+              Book Your Professional Cleaning Today
             </h2>
             <p className="text-xs text-neutral-500 font-medium font-body">
               Call us | WhatsApp us | Or fill in our quick contact form. We'll respond within the hour.
@@ -57,7 +57,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-1.5 bg-white/[0.03] border border-white/[0.05] px-2.5 py-1 rounded-sm">
                 <MapPin size={11} className="text-[#006fe3] shrink-0" />
-                <span>Serving All Areas of Pune</span>
+                <span>Serving All Areas of Pune, Mumbai, Bangalore & Hydrabad</span>
               </div>
               <div className="flex items-center gap-1.5 bg-white/[0.03] border border-white/[0.05] px-2.5 py-1 rounded-sm">
                 <Award size={11} className="text-amber-400 shrink-0" />

@@ -199,7 +199,7 @@ export default function GalleryView() {
               Ready to experience this elite spatial result on your property?
             </h4>
             <p className="font-body text-xs text-neutral-500 font-medium">
-              Our trained and verified professionals deliver thorough, high-end cleaning services across Pune.
+              Our trained and verified professionals deliver thorough, high-end cleaning services across Pune, Mumbai, Bangalore & Hydrabad.
             </p>
           </div>
           <a 

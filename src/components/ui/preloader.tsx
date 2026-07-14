@@ -169,7 +169,7 @@ export default function Preloader() {
               animate="show"
               className="font-body text-[9px] sm:text-[10px] font-bold tracking-[0.26em] uppercase text-neutral-400 max-w-xs leading-relaxed"
             >
-              Pune&apos;s Most Trusted <br />
+              Most Trusted <br />
               <span className="text-[#006fe3] mt-1 inline-block">Deep Cleaning Service</span>
             </motion.p>
 

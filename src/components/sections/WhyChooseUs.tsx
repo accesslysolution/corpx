@@ -109,7 +109,7 @@ export default function WhyChooseUs() {
             </div>
 
             <p className="font-body text-sm sm:text-base text-neutral-600 font-medium leading-relaxed">
-              When you let someone into your home or workplace, you are placing real trust in them. We take that seriously. Here is why thousands of homes and businesses across Pune have chosen us over the years:
+              When you let someone into your home or workplace, you are placing real trust in them. We take that seriously. Here is why thousands of homes and businesses across Pune, Mumbai, Bangalore & Hydrabad have chosen us over the years:
             </p>
 
             <div className="pt-2">
