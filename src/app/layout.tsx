@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+// Updated: Swapped out Playfair_Display for Poppins
+import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 // Components (Preserved your explicit file paths and shell lifecycle layout)
@@ -8,11 +9,11 @@ import Footer from "@/components/layout/Footer";
 import FloatingContactButtons from "@/components/ui/FloatingContactButtons";
 import Preloader from "@/components/ui/preloader";
 
-// Initialize elegant, editorial typography loaders
-const playfair = Playfair_Display({
+// Initialize modern, geometric heading typography loader
+const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: ["400", "600", "700", "800"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
@@ -26,23 +27,24 @@ const plusJakarta = Plus_Jakarta_Sans({
 // High-end, conversion-oriented local SEO configuration
 export const metadata: Metadata = {
   title: {
-    default: "Corpx | Premium Deep Cleaning Services in Pune",
+    default: "Corpx | Premium Deep Cleaning Services in Pune, Mumbai & Bangalore",
     template: "%s | Corpx",
   },
   description:
-    "Pune's most trusted deep cleaning service for luxury homes, modern offices, and commercial properties[cite: 1]. Safe products, verified professionals, and spotless results since 2016[cite: 1].",
+    "Trusted deep cleaning service for luxury homes, modern offices, and commercial properties across Pune, Mumbai, Hyderabad, and Bangalore. Safe products, verified professionals, and spotless results since 2016.",
   metadataBase: new URL("https://corpx.com"),
   keywords: [
     "Deep Cleaning Services in Pune",
-    "Home Cleaning Pune",
+    "Home Cleaning Mumbai",
+    "Office Cleaning Bangalore",
     "Sofa Cleaning Pune",
-    "Kitchen Cleaning Pune",
+    "Kitchen Cleaning Hyderabad",
     "Bathroom Cleaning Pune",
-    "Office Cleaning Pune",
+    "Commercial Cleaning Services India",
   ],
   openGraph: {
-    title: "Corpx Premium Cleaning Services Pune",
-    description: "Expert top-to-bottom deep cleaning for residential and commercial spaces across Pune[cite: 1].",
+    title: "Corpx Premium Cleaning Services",
+    description: "Expert top-to-bottom deep cleaning for residential and commercial spaces across Pune, Mumbai, Hyderabad & Bangalore.",
     type: "website",
     locale: "en_IN",
   },
@@ -59,7 +61,8 @@ export default function RootLayout({
   return (
     <html 
       lang="en" 
-      className={`${playfair.variable} ${plusJakarta.variable} scroll-smooth`}
+      /* Updated: Injecting poppins.variable instead of playfair.variable */
+      className={`${poppins.variable} ${plusJakarta.variable} scroll-smooth`}
     >
       <body className="font-body antialiased bg-white text-neutral-900 selection:bg-[#006fe3]/10 selection:text-[#006fe3]">
         

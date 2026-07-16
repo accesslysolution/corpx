@@ -5,6 +5,8 @@
 .hero-perspective-canvas {
   perspective: 1400px;
   transform-style: preserve-3d;
+  /* Ensure general text inside the 3D canvas defaults to the body font */
+  font-family: var(--font-body);
 }
 
 /* Luxury Interactive Floating Frame Architecture */
@@ -18,8 +20,16 @@
 }
 
 /* Custom Depth-Step Offsets for Individual Parallax Layers */
-.depth-tier-high { transform: translateZ(40px); }
-.depth-tier-mid { transform: translateZ(20px); }
+.depth-tier-high { 
+  transform: translateZ(40px); 
+  /* Force Poppins on high-depth floating elements (like metric numbers or titles) */
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.depth-tier-mid { 
+  transform: translateZ(20px); 
+}
 
 /* Premium Video Masking Layer */
 .video-mask-canvas {
@@ -27,9 +37,15 @@
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
 }
 
+/* Frosted Badge - Styled as a Punchy UI Label using Poppins */
 .frosted-pill-badge {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 111, 227, 0.08);
+  
+  /* Connected to globals.css Poppins styling */
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }

@@ -37,7 +37,7 @@ export default function HeroCarousel() {
   return (
     <section 
       ref={containerRef} 
-      className="relative w-full min-h-screen overflow-hidden bg-gradient-to-tr from-neutral-50 via-[#006fe3]/[0.01] to-white flex items-center pt-16"
+      className="relative w-full min-h-screen overflow-hidden bg-gradient-to-tr from-neutral-50 via-[#006fe3]/[0.01] to-white flex items-center pt-16 font-body"
     >
       {/* Background Ambient Video Layer */}
       <div className="absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none video-mask-canvas">
@@ -61,30 +61,31 @@ export default function HeroCarousel() {
             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
             className="lg:col-span-7 space-y-6 lg:max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 frosted-pill-badge rounded-full px-4 py-1.5 shadow-sm bg-white/80 border border-neutral-200/50">
+            {/* Badge - Upgraded to use Poppins for a punchy UI label */}
+            <div className="inline-flex items-center gap-2 frosted-pill-badge rounded-full px-4 py-1.5 shadow-sm">
               <MapPin size={13} className="text-[#006fe3]" />
-              <span className="text-[11px] font-bold tracking-wider uppercase text-neutral-800 font-body">
+              <span className="text-[11px] font-bold tracking-wider uppercase text-neutral-800 font-heading">
                 Premium Standards &bull;
               </span>
             </div>
 
-            {/* Target SEO Optimized Widescreen Heading */}
-            <h1 className="font-heading font-extrabold text-neutral-900 text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.1] tracking-tight">
+            {/* Target SEO Optimized Widescreen Heading - Explicitly using Poppins */}
+            <h1 className="font-heading font-bold text-neutral-900 text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.1] tracking-tight">
               Most Trusted <br />
               <span className="text-[#006fe3] bg-gradient-to-r from-[#006fe3] to-[#005bc4] bg-clip-text text-transparent">
                 Deep Cleaning
               </span> Service <br />
-              <span className="text-xl sm:text-2xl md:text-3xl font-bold block text-neutral-500 tracking-normal font-heading pt-2">
+              <span className="text-xl sm:text-2xl md:text-3xl font-semibold block text-neutral-500 tracking-normal font-heading pt-2">
                 — For Homes, Offices & Commercial Spaces
               </span>
             </h1>
 
-            {/* Subheadline Structural Description */}
-            <p className="font-body text-neutral-600 text-base sm:text-lg md:text-xl font-medium max-w-xl leading-relaxed">
-              Expert cleaning professionals. Safe, proven products. Results you can see — and feel. Serving in Pune, Mumbai, Hydrabad & Bangalore since 2016.
+            {/* Subheadline Structural Description - Using Plus Jakarta Sans */}
+            <p className="font-body text-neutral-600 text-base sm:text-lg md:text-xl font-normal max-w-xl leading-relaxed">
+              Expert cleaning professionals. Safe, proven products. Results you can see — and feel. Serving in Pune, Mumbai, Hyderabad & Bangalore since 2016.
             </p>
 
-            <div className="flex flex-wrap gap-x-6 gap-y-2 pt-1 text-xs font-bold font-body text-neutral-500 uppercase tracking-wide">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 pt-1 text-xs font-semibold font-body text-neutral-500 uppercase tracking-wide">
               <div className="flex items-center gap-1.5">
                 <ShieldCheck size={16} className="text-[#006fe3]" />
                 <span>ISO 9001:2015 Certified Operations</span>
@@ -96,7 +97,7 @@ export default function HeroCarousel() {
             </div>
 
             {/* Action Call Pipeline Links */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 font-body">
               <Link 
                 href="/contact" 
                 className="btn-urgent-orange text-center group font-bold tracking-wider text-xs uppercase px-8 py-4 flex items-center justify-center gap-2 shadow-sm"

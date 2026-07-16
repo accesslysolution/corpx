@@ -1,13 +1,23 @@
 /* ==========================================================================
-   TAILWIND v4 CORE & CUSTOM MOTION ARCHITECTURE
+   FONT IMPORTS (Required so the browser downloads Poppins & Plus Jakarta Sans)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+/* ==========================================================================
+   TAILWIND v4 CORE & THEME CONFIGURATION
    ========================================================================== */
 @import "tailwindcss";
 @import "./motion.css";
 
+/* Registers fonts as utility classes (e.g., class="font-heading") in Tailwind v4 */
+@theme {
+  --font-heading: 'Poppins', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
 /* ==========================================================================
    GLOBAL DESIGN TOKENS & TYPOGRAPHY SYSTEM
    ========================================================================== */
-
 @layer base {
   :root {
     --brand-blue: 0 111 227;     /* #006fe3 */
@@ -16,7 +26,8 @@
     --brand-white: 255 255 255;  /* #ffffff */
     --brand-canvas: 248 250 252; /* #f8fafc */
     
-    --font-heading: 'Playfair Display', Georgia, serif;
+    /* Geometric Modern Typography Stack (Poppins Style) */
+    --font-heading: 'Poppins', 'Plus Jakarta Sans', system-ui, sans-serif;
     --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
   }
 
@@ -32,8 +43,8 @@
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: rgb(var(--brand-black));
-    letter-spacing: -0.02em;
-    font-weight: 700;
+    letter-spacing: -0.02em; /* Adjusted from -0.03em so circular characters breathe */
+    font-weight: 700;        /* Bold weight complements Poppins' geometric structure */
   }
 
   h1 { @apply text-4xl md:text-5xl lg:text-6xl leading-[1.1]; }

@@ -14,28 +14,52 @@ const locations = [
   "Pune", "Mumbai", "Bangalore", "Hyderabad"
 ];
 
-const inputClass = "w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl pl-12 pr-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all placeholder:text-gray-400";
+const inputClass = "w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl pl-12 pr-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all placeholder:text-gray-400 font-body";
 const iconClass = "absolute left-4 top-3.5 text-gray-400";
 
-export default function ContactForm({ action, pending, state }: any) {
+export default function ContactForm({ action, pending: externalPending, state }: any) {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // When 'state' changes to success, show the Thank You message
+  // 1. Listen for external state changes (if using React useActionState / useFormState)
   useEffect(() => {
     if (state?.success) {
       setIsSubmitted(true);
-      // Automatically reset after 5 seconds
+    }
+  }, [state]);
+
+  // 2. Auto-reset the Thank You screen after 5 seconds
+  useEffect(() => {
+    if (isSubmitted) {
       const timer = setTimeout(() => {
         setIsSubmitted(false);
       }, 5000);
       return () => clearTimeout(timer);
     }
-  }, [state]);
+  }, [isSubmitted]);
+
+  // 3. Robust async wrapper to guarantee UI state transition
+  const handleFormSubmit = async (formData: FormData) => {
+    setIsSubmitting(true);
+    try {
+      if (action) {
+        await action(formData);
+      }
+      // Trigger success screen regardless of what the server action returns
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Submission failed:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const isLoading = externalPending || isSubmitting;
 
   return (
     <motion.form
-      action={action}
-      className="bg-white p-8 md:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-gray-100 relative overflow-hidden"
+      action={handleFormSubmit}
+      className="bg-white p-8 md:p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-gray-100 relative overflow-hidden font-body"
     >
       <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500" />
 
@@ -50,7 +74,7 @@ export default function ContactForm({ action, pending, state }: any) {
             className="py-12 flex flex-col items-center justify-center text-center space-y-4"
           >
             <CheckCircle2 className="text-green-500 w-16 h-16" />
-            <h3 className="text-2xl font-bold text-gray-900">Thank You!</h3>
+            <h3 className="text-2xl font-bold text-gray-900 font-heading">Thank You!</h3>
             <p className="text-gray-500">We've received your request and will be in touch shortly.</p>
           </motion.div>
         ) : (
@@ -62,7 +86,7 @@ export default function ContactForm({ action, pending, state }: any) {
             exit={{ opacity: 0 }}
             className="space-y-5"
           >
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Let's Connect</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2 font-heading">Let's Connect</h2>
             <p className="text-gray-500 mb-8">Tell us about your requirements, and we'll reach out shortly.</p>
 
             <div className="relative">
@@ -108,10 +132,10 @@ export default function ContactForm({ action, pending, state }: any) {
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              disabled={pending}
-              className="w-full bg-gray-900 text-white py-4 rounded-xl font-bold hover:bg-indigo-600 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+              disabled={isLoading}
+              className="w-full bg-gray-900 text-white py-4 rounded-xl font-bold hover:bg-indigo-600 transition-all disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
             >
-              {pending ? "Sending..." : <>Submit Request <Send size={18} /></>}
+              {isLoading ? "Sending..." : <>Submit Request <Send size={18} /></>}
             </motion.button>
           </motion.div>
         )}

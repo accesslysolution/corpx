@@ -14,6 +14,8 @@ import {
   Star, 
   Award 
 } from "lucide-react";
+// Swapped to react-icons/fa6 to prevent Lucide social icon import errors
+import { FaInstagram, FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa6";
 import "./Footer.css";
 
 export default function Footer() {
@@ -24,8 +26,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-12 pb-12">
         
         {/* ==========================================
-           NEW INTEGRATION: ELITE TERMINAL CLOSING CTA
-           ========================================== */}
+            NEW INTEGRATION: ELITE TERMINAL CLOSING CTA
+            ========================================== */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +59,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-1.5 bg-white/[0.03] border border-white/[0.05] px-2.5 py-1 rounded-sm">
                 <MapPin size={11} className="text-[#006fe3] shrink-0" />
-                <span>Serving All Areas of Pune, Mumbai, Bangalore & Hydrabad</span>
+                <span>Serving All Areas of Pune, Mumbai, Bangalore & Hyderabad</span>
               </div>
               <div className="flex items-center gap-1.5 bg-white/[0.03] border border-white/[0.05] px-2.5 py-1 rounded-sm">
                 <Award size={11} className="text-amber-400 shrink-0" />
@@ -79,8 +81,8 @@ export default function Footer() {
         </motion.div>
 
         {/* ==========================================
-           2. MAIN ARCHITECTURAL NAVIGATION MATRIX
-           ========================================== */}
+            2. MAIN ARCHITECTURAL NAVIGATION MATRIX
+            ========================================== */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
           {/* Block 1: Brand Authority Signature */}
@@ -170,7 +172,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Block 4: Strategic Communication Core Terminal */}
+          {/* Block 4: Strategic Communication Core Terminal + Social Network */}
           <div className="lg:col-span-3 flex flex-col space-y-6">
             <h4 className="text-[10px] font-bold text-neutral-900 tracking-widest uppercase border-b border-neutral-100 pb-2 font-heading">
               Communication Hub
@@ -198,24 +200,70 @@ export default function Footer() {
               </a>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-1">
               <a 
                 href="https://wa.me/919595000022?text=Hi%20CorpX,%20I%20want%20to%20get%20a%20free%20quote%20for%20deep%20cleaning%20services%20in%20Pune."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer-action-trigger w-full text-center inline-flex items-center justify-center gap-2.5 border border-neutral-200 bg-white text-neutral-800 font-body font-bold text-xs uppercase tracking-widest py-4 px-6 rounded-sm shadow-xs active:scale-98 cursor-pointer focus:outline-none"
+                className="footer-action-trigger w-full text-center inline-flex items-center justify-center gap-2.5 border border-neutral-200 bg-white text-neutral-800 font-body font-bold text-xs uppercase tracking-widest py-3.5 px-6 rounded-sm shadow-xs active:scale-98 cursor-pointer focus:outline-none"
               >
                 <MessageCircle size={14} className="fill-current text-[#25d366]" />
                 Start WhatsApp Chat
               </a>
             </div>
+
+            {/* Social Media Grid (Powered by react-icons/fa6) */}
+            <div className="pt-2 border-t border-neutral-100 flex items-center justify-between">
+              <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest font-heading">
+                Follow Us
+              </span>
+              <div className="flex items-center gap-2">
+                <a 
+                  href="https://www.instagram.com/corpxtensions?igsh=b3ByaDJqZXVwaHpi" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Instagram"
+                  className="w-8 h-8 rounded-lg bg-white border border-neutral-200/70 flex items-center justify-center text-neutral-600 shadow-xs hover:bg-[#E1306C]/10 hover:text-[#E1306C] hover:border-[#E1306C]/30 transition-all duration-300 focus:outline-none"
+                >
+                  <FaInstagram size={14} />
+                </a>
+                <a 
+                  href="https://www.facebook.com/profile.php?id=61591152821093" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Facebook"
+                  className="w-8 h-8 rounded-lg bg-white border border-neutral-200/70 flex items-center justify-center text-neutral-600 shadow-xs hover:bg-[#1877F2]/10 hover:text-[#1877F2] hover:border-[#1877F2]/30 transition-all duration-300 focus:outline-none"
+                >
+                  <FaFacebook size={14} />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/company/corp-xtensions-llp/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="LinkedIn"
+                  className="w-8 h-8 rounded-lg bg-white border border-neutral-200/70 flex items-center justify-center text-neutral-600 shadow-xs hover:bg-[#0A66C2]/10 hover:text-[#0A66C2] hover:border-[#0A66C2]/30 transition-all duration-300 focus:outline-none"
+                >
+                  <FaLinkedin size={14} />
+                </a>
+                <a 
+                  href="https://youtube.com/@corpxtensionsllp?si=qsNvYXAGXRewbsLr" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="YouTube"
+                  className="w-8 h-8 rounded-lg bg-white border border-neutral-200/70 flex items-center justify-center text-neutral-600 shadow-xs hover:bg-[#FF0000]/10 hover:text-[#FF0000] hover:border-[#FF0000]/30 transition-all duration-300 focus:outline-none"
+                >
+                  <FaYoutube size={14} />
+                </a>
+              </div>
+            </div>
+
           </div>
 
         </div>
 
         {/* ==========================================
-           3. BOTTOM COMPLIANCE & ACCREDITATION BAR
-           ========================================== */}
+            3. BOTTOM COMPLIANCE & ACCREDITATION BAR
+            ========================================== */}
         <div className="border-t border-neutral-200/50 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           
           <div className="space-y-1">
